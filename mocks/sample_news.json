@@ -1,0 +1,36 @@
+{
+    "disaster": "wildfire",
+    "news": [
+        {
+            "headline": "Wildfire spreads due to dry conditions and strong winds in forest fringe areas",
+            "published_at": "2026-04-15T07:42:59.606119+00:00",
+            "title": "Wildfire spreads due to dry conditions and strong winds in forest fringe areas",
+            "url": "https://firms.modaps.eosdis.nasa.gov/"
+        },
+        {
+            "headline": "Satellite hotspots increase as vegetation dryness remains high",
+            "published_at": "2026-04-15T01:42:59.606119+00:00",
+            "title": "Satellite hotspots increase as vegetation dryness remains high",
+            "url": "https://firms.modaps.eosdis.nasa.gov/"
+        },
+        {
+            "headline": "Forest department issues precautionary advisory for high fire-risk zones",
+            "published_at": "2026-04-14T19:42:59.606119+00:00",
+            "title": "Forest department issues precautionary advisory for high fire-risk zones",
+            "url": "https://www.fs.usda.gov/"
+        },
+        {
+            "headline": "Fire lines expanded to contain active burn pockets near settlement edges",
+            "published_at": "2026-04-14T13:42:59.606119+00:00",
+            "title": "Fire lines expanded to contain active burn pockets near settlement edges",
+            "url": "https://www.fs.usda.gov/"
+        },
+        {
+            "headline": "Emergency response teams monitor wind-driven flare-up potential overnight",
+            "published_at": "2026-04-14T07:42:59.606119+00:00",
+            "title": "Emergency response teams monitor wind-driven flare-up potential overnight",
+            "url": "https://firms.modaps.eosdis.nasa.gov/"
+        }
+    ],
+    "success": true
+}

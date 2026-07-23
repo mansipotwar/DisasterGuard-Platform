@@ -1,0 +1,215 @@
+{
+  "user_id": "u123",
+  "total_predictions": 1,
+  "high_risk_count": 0,
+  "last_prediction": {
+    "id": "1776247334.025655",
+    "user_id": "u123",
+    "timestamp": "2026-04-15T10:02:14.025655+00:00",
+    "disaster": "flood",
+    "probability": 0.18,
+    "risk_level": "LOW",
+    "location": {
+      "full_name": "Nagpur City, Nagpur Urban Taluka, Maharashtra, India (PIN: 440027)",
+      "city": "Nagpur City",
+      "district": "Nagpur Urban Taluka",
+      "state": "Maharashtra",
+      "country": "India",
+      "pincode": "440027",
+      "latitude": 21.1,
+      "longitude": 79.1,
+      "date": "2026-04-15"
+    },
+    "predictions": {
+      "flood": {
+        "risk_level": "Low",
+        "probability": 0.18,
+        "probability_percent": 18.0,
+        "risk_score": 0.18,
+        "risk_score_percent": 18.0,
+        "confidence_percent": 91.0,
+        "reasoning": "Low rainfall (0.0 mm) and Low humidity (8.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+        "insight": "Dry conditions with no rainfall indicate minimal flood-triggering factors. Soil saturation remains low.",
+        "interpretation": "Environment is not currently conducive to flooding. This is a low susceptibility state.",
+        "safety_advice": [
+          "No immediate flood precautions required.",
+          "Monitor rainfall updates during weather changes.",
+          "Keep drainage areas clear as a precaution."
+        ],
+        "factors_used": [
+          "temperature",
+          "humidity",
+          "rainfall",
+          "wind_speed",
+          "pressure"
+        ],
+        "extra": {
+          "derived": {
+            "soil_moisture": 0.0
+          },
+          "rule_score": 0.2,
+          "ml_score": 0.3,
+          "ml_used": true,
+          "fusion_type": "adaptive_ml_balanced_60_40_rainfall_zero_hard_sanity",
+          "confidence_bucket": "high",
+          "consistency_check": {
+            "valid": false,
+            "reason": "rainfall contradiction"
+          }
+        }
+      },
+      "wildfire": {
+        "risk_level": "High",
+        "probability": 0.952,
+        "probability_percent": 95.2,
+        "risk_score": 0.9623999999999999,
+        "risk_score_percent": 96.24,
+        "confidence_percent": 92.0,
+        "reasoning": "High temperature (42.1\u00b0C) with Low humidity (8.0%) creates dryness_index (38.74), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+        "insight": "High temperature and very low humidity are increasing surface dryness, creating conditions favorable for wildfire ignition.",
+        "interpretation": "Environment shows high fire susceptibility, not an active fire.",
+        "safety_advice": [
+          "Avoid open flames in dry vegetation areas.",
+          "Keep water or extinguishers accessible.",
+          "Monitor local fire alerts."
+        ],
+        "factors_used": [
+          "temperature",
+          "humidity",
+          "rainfall",
+          "wind_speed",
+          "pressure"
+        ],
+        "extra": {
+          "derived": {
+            "dryness_index": 38.7412
+          },
+          "rule_score": 0.9,
+          "ml_score": 0.9867,
+          "ml_used": true,
+          "fusion_type": "adaptive_ml_balanced_60_40",
+          "confidence_bucket": "high",
+          "consistency_check": {
+            "valid": true,
+            "reason": ""
+          }
+        }
+      },
+      "landslide": {
+        "risk_level": "Low",
+        "probability": 0.2,
+        "probability_percent": 20.0,
+        "risk_score": 0.2,
+        "risk_score_percent": 20.0,
+        "confidence_percent": 88.93,
+        "reasoning": "Low rainfall (0.0 mm) and Low humidity (8.0%) yield soil_saturation (2.4) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+        "insight": "Lack of rainfall results in low soil saturation, reducing slope instability.",
+        "interpretation": "Landslide risk is minimal under dry conditions.",
+        "safety_advice": [
+          "No immediate landslide threat.",
+          "Stay cautious in hilly terrain during future rainfall.",
+          "Monitor slope conditions after heavy rains."
+        ],
+        "factors_used": [
+          "temperature",
+          "humidity",
+          "rainfall",
+          "wind_speed",
+          "pressure"
+        ],
+        "extra": {
+          "derived": {
+            "soil_saturation": 2.4,
+            "slope_factor": 0.7
+          },
+          "rule_score": 0.25,
+          "ml_score": 0.8467,
+          "ml_used": true,
+          "fusion_type": "adaptive_ml_balanced_60_40_landslide_requires_rain",
+          "confidence_bucket": "high",
+          "consistency_check": {
+            "valid": false,
+            "reason": "rainfall contradiction"
+          }
+        }
+      },
+      "hurricane": {
+        "risk_level": "Low",
+        "probability": 0.014000000000000002,
+        "probability_percent": 1.4,
+        "risk_score": 0.014000000000000002,
+        "risk_score_percent": 1.4,
+        "confidence_percent": 92.0,
+        "reasoning": "High temperature (42.1\u00b0C), wind_speed (22.2km/h), and pressure (1002.0hPa) produce storm_index (0.0222). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+        "insight": "Geographic location is inland, reducing exposure to cyclone systems.",
+        "interpretation": "Hurricane-related risk is negligible.",
+        "safety_advice": [
+          "No cyclone-specific precautions required.",
+          "Stay informed during regional storm alerts.",
+          "Secure outdoor objects during strong winds."
+        ],
+        "factors_used": [
+          "temperature",
+          "humidity",
+          "rainfall",
+          "wind_speed",
+          "pressure"
+        ],
+        "extra": {
+          "derived": {
+            "storm_index": 0.02216766467065868
+          },
+          "rule_score": 0.1,
+          "ml_score": 0.0,
+          "ml_used": true,
+          "fusion_type": "adaptive_ml_low_60_40_inland_suppression",
+          "confidence_bucket": "low",
+          "consistency_check": {
+            "valid": false,
+            "reason": "inland location"
+          }
+        }
+      },
+      "earthquake": {
+        "risk_level": "Low",
+        "probability": 0.12160000000000003,
+        "probability_percent": 12.16,
+        "risk_score": 0.11392000000000001,
+        "risk_score_percent": 11.39,
+        "confidence_percent": 81.6,
+        "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+        "insight": "Earthquake risk is based on regional seismic patterns and is independent of weather conditions.",
+        "interpretation": "This represents background seismic susceptibility, not a prediction of occurrence.",
+        "safety_advice": [
+          "Identify safe drop-cover-hold locations.",
+          "Secure heavy furniture.",
+          "Keep emergency kits ready."
+        ],
+        "factors_used": [
+          "lat",
+          "lon",
+          "seismic_activity",
+          "historical_risk"
+        ],
+        "extra": {
+          "derived": {
+            "seismic_activity": 0.1,
+            "historical_risk": 0.5
+          },
+          "rule_score": 0.2,
+          "ml_score": 0.12,
+          "ml_used": true,
+          "fusion_type": "adaptive_ml_low_60_40_seismic_support_required",
+          "confidence_bucket": "low",
+          "consistency_check": {
+            "valid": false,
+            "reason": "low seismic support"
+          }
+        }
+      }
+    }
+  },
+  "risk_breakdown": {
+    "flood": 1
+  }
+}

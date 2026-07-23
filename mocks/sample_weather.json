@@ -1,0 +1,14 @@
+{
+    "success": true,
+    "weather": {
+        "cache": "hit",
+        "humidity": 12.0,
+        "lat": 21.1458,
+        "lon": 79.0882,
+        "pressure": 1002.0,
+        "rainfall": 0.0,
+        "source": "openweathermap",
+        "temperature": 41.0,
+        "wind_speed": 11.124
+    }
+}

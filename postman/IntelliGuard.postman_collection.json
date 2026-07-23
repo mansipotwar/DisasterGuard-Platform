@@ -1,0 +1,355 @@
+{
+  "info": {
+    "name": "IntelliGuard API",
+    "description": "Test the Flask API while it runs locally (`python run.py`).\n\n**MongoDB** is configured on the server in `.env` (`MONGO_URI`) — Postman does not connect to Mongo directly.\n\n**Suggested order:** Health → Home → Auth (Register *or* Login) → Weather → Predict → Alerts.\n\nAfter **Register** or **Login**, the `token` collection variable is set automatically.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://127.0.0.1:5000" },
+    { "key": "token", "value": "" },
+    { "key": "userEmail", "value": "" },
+    { "key": "userPassword", "value": "StrongPass!123" }
+  ],
+  "item": [
+    {
+      "name": "1 — Health & home",
+      "item": [
+        {
+          "name": "GET /health",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('JSON body', () => pm.response.to.be.json);",
+                  "const j = pm.response.json();",
+                  "pm.test('status ok', () => pm.expect(j.status).to.eql('ok'));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/health"
+          }
+        },
+        {
+          "name": "GET / (API index)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('JSON', () => pm.response.to.be.json);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/"
+          }
+        }
+      ]
+    },
+    {
+      "name": "2 — Auth",
+      "item": [
+        {
+          "name": "Register (unique email → saves token)",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set('userEmail', `ig_${Date.now()}@example.com`);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 201', () => pm.response.to.have.status(201));",
+                  "const j = pm.response.json();",
+                  "pm.test('success', () => pm.expect(j.success).to.be.true);",
+                  "pm.test('has token', () => pm.expect(j.token).to.be.a('string'));",
+                  "if (j.token) pm.collectionVariables.set('token', j.token);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Postman User\",\n  \"email\": \"{{userEmail}}\",\n  \"password\": \"{{userPassword}}\",\n  \"location\": { \"lat\": 12.9716, \"lon\": 77.5946 }\n}"
+            },
+            "url": "{{baseUrl}}/auth/register"
+          }
+        },
+        {
+          "name": "Login (uses userEmail + userPassword → saves token)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test('success', () => pm.expect(j.success).to.be.true);",
+                  "if (j.token) pm.collectionVariables.set('token', j.token);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{userEmail}}\",\n  \"password\": \"{{userPassword}}\"\n}"
+            },
+            "url": "{{baseUrl}}/auth/login"
+          }
+        },
+        {
+          "name": "Me (Bearer {{token}})",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test('has user', () => pm.expect(j.user).to.be.an('object'));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/auth/me"
+          }
+        }
+      ]
+    },
+    {
+      "name": "3 — Weather & predictions",
+      "item": [
+        {
+          "name": "GET /weather",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test('weather keys', () => {",
+                  "  pm.expect(j.weather).to.have.keys(['temperature','humidity','rainfall','wind_speed']);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/weather?lat=12.9716&lon=77.5946"
+          }
+        },
+        {
+          "name": "POST /predict (guest — location in body)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test('predictions object', () => pm.expect(j.predictions).to.be.an('object'));",
+                  "pm.test('5 disaster keys', () => pm.expect(Object.keys(j.predictions).length).to.eql(5));",
+                  "pm.test('disasters ML bundle', () => {",
+                  "  pm.expect(j.disasters).to.be.an('object');",
+                  "  ['flood','wildfire','landslide','hurricane','earthquake'].forEach(k => pm.expect(j.disasters).to.have.property(k));",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location\": { \"lat\": 12.9716, \"lon\": 77.5946 }\n}"
+            },
+            "url": "{{baseUrl}}/predict"
+          }
+        },
+        {
+          "name": "POST /predict (auth — uses profile location)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('success', () => pm.expect(pm.response.json().success).to.be.true);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": "{{baseUrl}}/predict"
+          }
+        },
+        {
+          "name": "GET /predict/flood (auth)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('prediction', () => pm.expect(pm.response.json().prediction).to.be.an('object'));",
+                  "pm.test('disaster_type flood', () => pm.expect(pm.response.json().prediction.disaster_type).to.eql('flood'));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/predict/flood"
+          }
+        },
+        {
+          "name": "GET /predict/flood (guest — lat/lon query)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/predict/flood?lat=12.9716&lon=77.5946"
+          }
+        }
+      ]
+    },
+    {
+      "name": "4 — ML (no Mongo write)",
+      "item": [
+        {
+          "name": "POST /ml/predict",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test('risk_level', () => pm.expect(['Low','Medium','High']).to.include(j.risk_level));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"disaster_type\": \"flood\",\n  \"weather\": {\n    \"temperature\": 28,\n    \"humidity\": 88,\n    \"rainfall\": 95,\n    \"wind_speed\": 22\n  },\n  \"location\": { \"lat\": 12.9716, \"lon\": 77.5946 }\n}"
+            },
+            "url": "{{baseUrl}}/ml/predict"
+          }
+        }
+      ]
+    },
+    {
+      "name": "5 — Alerts",
+      "item": [
+        {
+          "name": "GET /alerts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('alerts array', () => pm.expect(pm.response.json().alerts).to.be.an('array'));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/alerts?limit=50"
+          }
+        },
+        {
+          "name": "POST /alerts/test-email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('2xx or 502 if SMTP not set', () => {",
+                  "  pm.expect(pm.response.code).to.be.oneOf([200, 502]);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"to\": \"you@example.com\"\n}"
+            },
+            "url": "{{baseUrl}}/alerts/test-email"
+          }
+        }
+      ]
+    }
+  ]
+}

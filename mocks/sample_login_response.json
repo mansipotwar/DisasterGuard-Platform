@@ -1,0 +1,15 @@
+{
+    "success": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OWRhODBhNjUzM2IzZDczZmE5NDYxYjIiLCJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzYyNDIyMjYsImV4cCI6MTc3NjMyODYyNiwidHlwZSI6ImFjY2VzcyJ9.zUhxcqSKFbS2H2SN51Ib2mrey1kAFFmwtoA3OgA8z0g",
+    "token_type": "Bearer",
+    "user": {
+        "created_at": "Sat, 11 Apr 2026 17:11:02 GMT",
+        "email": "test@example.com",
+        "id": "69da80a6533b3d73fa9461b2",
+        "location": {
+            "lat": 21.1458,
+            "lon": 79.0882
+        },
+        "name": "Test User"
+    }
+}

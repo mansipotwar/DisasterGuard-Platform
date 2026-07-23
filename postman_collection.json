@@ -1,0 +1,258 @@
+{
+  "info": {
+    "_postman_id": "fdbf9baf-a2d4-4f6d-bd1a-2f2a8ad4b0f3",
+    "name": "IntelliGuard API Collection",
+    "description": "Complete backend collection for IntelliGuard (Flask + ML + Mongo).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://127.0.0.1:5000" },
+    { "key": "token", "value": "" },
+    { "key": "lat", "value": "21.1458" },
+    { "key": "lon", "value": "79.0882" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Postman User\",\n  \"email\": \"postman.user@example.com\",\n  \"password\": \"securepassword\",\n  \"location\": {\n    \"lat\": {{lat}},\n    \"lon\": {{lon}}\n  }\n}"
+            },
+            "url": "{{base_url}}/auth/register"
+          }
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData && jsonData.token) {",
+                  "  pm.collectionVariables.set('token', jsonData.token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"postman.user@example.com\",\n  \"password\": \"securepassword\"\n}"
+            },
+            "url": "{{base_url}}/auth/login"
+          }
+        },
+        {
+          "name": "Me",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{base_url}}/auth/me"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Weather",
+      "item": [
+        {
+          "name": "Get Current Weather",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{base_url}}/weather?lat={{lat}}&lon={{lon}}",
+              "host": ["{{base_url}}"],
+              "path": ["weather"],
+              "query": [
+                { "key": "lat", "value": "{{lat}}" },
+                { "key": "lon", "value": "{{lon}}" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Prediction",
+      "item": [
+        {
+          "name": "Predict All (POST /predict)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location\": {\n    \"lat\": {{lat}},\n    \"lon\": {{lon}}\n  }\n}"
+            },
+            "url": "{{base_url}}/predict"
+          }
+        },
+        {
+          "name": "Predict One Flood (GET /predict/flood)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": {
+              "raw": "{{base_url}}/predict/flood?lat={{lat}}&lon={{lon}}",
+              "host": ["{{base_url}}"],
+              "path": ["predict", "flood"],
+              "query": [
+                { "key": "lat", "value": "{{lat}}" },
+                { "key": "lon", "value": "{{lon}}" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "ML Predict",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"disaster_type\": \"wildfire\",\n  \"location\": {\n    \"lat\": {{lat}},\n    \"lon\": {{lon}}\n  },\n  \"weather\": {\n    \"temperature\": 32,\n    \"humidity\": 45,\n    \"rainfall\": 0.5,\n    \"wind_speed\": 18,\n    \"pressure\": 1004\n  }\n}"
+            },
+            "url": "{{base_url}}/ml/predict"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Dashboard Summary",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{base_url}}/dashboard/summary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "item": [
+        {
+          "name": "History 24h",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{base_url}}/predictions/history?range=24h"
+          }
+        },
+        {
+          "name": "History 7d",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{base_url}}/predictions/history?range=7d"
+          }
+        },
+        {
+          "name": "History 30d",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{base_url}}/predictions/history?range=30d"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Analysis",
+      "item": [
+        { "name": "Overview", "request": { "method": "GET", "url": "{{base_url}}/analysis/overview" } },
+        { "name": "Flood", "request": { "method": "GET", "url": "{{base_url}}/analysis/flood" } },
+        { "name": "Earthquake", "request": { "method": "GET", "url": "{{base_url}}/analysis/earthquake" } },
+        { "name": "Wildfire", "request": { "method": "GET", "url": "{{base_url}}/analysis/wildfire" } },
+        { "name": "Hurricane", "request": { "method": "GET", "url": "{{base_url}}/analysis/hurricane" } },
+        { "name": "Landslide", "request": { "method": "GET", "url": "{{base_url}}/analysis/landslide" } }
+      ]
+    },
+    {
+      "name": "Safety",
+      "item": [
+        { "name": "Overview", "request": { "method": "GET", "url": "{{base_url}}/safety/overview" } },
+        { "name": "Flood", "request": { "method": "GET", "url": "{{base_url}}/safety/flood" } },
+        { "name": "Earthquake", "request": { "method": "GET", "url": "{{base_url}}/safety/earthquake" } },
+        { "name": "Wildfire", "request": { "method": "GET", "url": "{{base_url}}/safety/wildfire" } },
+        { "name": "Hurricane", "request": { "method": "GET", "url": "{{base_url}}/safety/hurricane" } },
+        { "name": "Landslide", "request": { "method": "GET", "url": "{{base_url}}/safety/landslide" } }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "item": [
+        { "name": "Overview", "request": { "method": "GET", "url": "{{base_url}}/analytics/overview" } },
+        { "name": "Trends 7d", "request": { "method": "GET", "url": "{{base_url}}/analytics/trends?days=7" } },
+        { "name": "Trends 10d", "request": { "method": "GET", "url": "{{base_url}}/analytics/trends?days=10" } },
+        { "name": "Trends 30d", "request": { "method": "GET", "url": "{{base_url}}/analytics/trends?days=30" } }
+      ]
+    },
+    {
+      "name": "Route",
+      "item": [
+        {
+          "name": "Calculate Route",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source_lat\": 21.1458,\n  \"source_lon\": 79.0882,\n  \"dest_lat\": 21.1825,\n  \"dest_lon\": 79.0250\n}"
+            },
+            "url": "{{base_url}}/route/calculate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "News",
+      "item": [
+        { "name": "Flood News", "request": { "method": "GET", "url": "{{base_url}}/news/latest?disaster=flood" } },
+        { "name": "Wildfire News", "request": { "method": "GET", "url": "{{base_url}}/news/latest?disaster=wildfire" } }
+      ]
+    },
+    {
+      "name": "Alerts",
+      "item": [
+        {
+          "name": "List Alerts",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{base_url}}/alerts"
+          }
+        },
+        {
+          "name": "Test Email Alert",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "body": { "mode": "raw", "raw": "{\n  \"to\": \"postman.user@example.com\"\n}" },
+            "url": "{{base_url}}/alerts/test-email"
+          }
+        }
+      ]
+    }
+  ]
+}

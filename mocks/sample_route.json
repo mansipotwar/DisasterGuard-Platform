@@ -1,0 +1,13 @@
+{
+    "route": {
+        "distance_km": 11.883,
+        "duration_minutes": 15.21,
+        "nearest_hospital": {
+            "lat": 19.076,
+            "lon": 72.8777,
+            "name": "City General Hospital"
+        },
+        "route_geometry": "u`a`C{{uaNACCG?E?EBGDEFEF?F@DBDDBF?FAFADEDEBE@KnAwApHoAhG_@`CUlAcA~I?BQ~ABf@DZE\\}@b@qA`@g@JIBiACmD[{AMI?{BAkD@_C@oAMCAQCkGoAa@DO@[HwBl@w@Vw@\\k@XkAl@k@\\m@ZWNYNc@Ta@Lg@Hg@FyAFY@[@iCDa@@a@AWCgBQS?Q@{BTU@S?}BA{GGeC@iAAqA?qA@i@Fe@LsC~@wC|@q@TeA\\i@\\o@`@mGjEEDm@\\_@\\_@`@Yj@MZGROj@[nA]pAQ~@Oz@MnA_@tDIfBEp@A^@VA`B@bCLjDBXCr@Ah@MpEG|AEfAIvBMzCIfBAXIv@Qt@Yz@KZaBtEaA|B}@bCy@xB_@jCYdBy@zEYz@[`AWx@Kd@YrAk@xDK`@_@`CYvBE\\EVUzAs@zDe@|AUz@Uz@c@fBCHIXSx@i@~BcBbGkCbI]`A]`AOf@Ob@[~@]`Ay@~BELgDjJsDpKuA|DUr@kBrFsB`Hq@~BwA~Eg@hBM`@c@zAWz@Kb@i@lBU`AIVAFQf@sBxGu@xBa@|@kBdGSn@oE~NiJzZa@~@mAvAkCtBqAjAoFjIaClHx@GX@t@pBx@vAXp@PXVNp@jArD[r@WFM@OAyABk@CYY_Ao@yASa@G]?OJKLCf@Bt@P\\Bn@Gj@]^a@Vg@HKRGz@@dDVdAKj@IJIV[dA[POb@u@TYv@uAHIJCt@LtAMd@e@Rc@^uAD]@YKcAYq@GWOqAUs@Wg@Us@Q_BVs@"
+    },
+    "success": true
+}

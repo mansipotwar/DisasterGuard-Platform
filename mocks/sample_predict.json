@@ -1,0 +1,3646 @@
+{
+    "debug": {
+        "api_used": true,
+        "fallback_used": false,
+        "raw_weather": {
+            "cache": "miss",
+            "humidity": 12.0,
+            "lat": 21.1458,
+            "lon": 79.0882,
+            "pressure": 1002.0,
+            "rainfall": 0.0,
+            "source": "openweathermap",
+            "temperature": 41.0,
+            "wind_speed": 11.124
+        },
+        "weather_data_present": true
+    },
+    "location": {
+        "city": "Nagpur City",
+        "country": "India",
+        "date": "2026-04-15",
+        "district": "Nagpur Urban Taluka",
+        "full_name": "Nagpur City, Nagpur Urban Taluka, Maharashtra, India (PIN: 440002)",
+        "latitude": 21.1458,
+        "longitude": 79.0882,
+        "pincode": "440002",
+        "state": "Maharashtra"
+    },
+    "predictions": {
+        "earthquake": {
+            "confidence_percent": 81.53,
+            "extra": {
+                "confidence_bucket": "low",
+                "consistency_check": {
+                    "reason": "low seismic support",
+                    "valid": false
+                },
+                "derived": {
+                    "historical_risk": 0.5,
+                    "seismic_activity": 0.319
+                },
+                "fusion_type": "adaptive_ml_low_60_40_seismic_support_required",
+                "ml_score": 0.1233,
+                "ml_used": true,
+                "rule_score": 0.2
+            },
+            "factors_used": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "insight": "Earthquake risk is based on regional seismic patterns and is independent of weather conditions.",
+            "interpretation": "This represents background seismic susceptibility, not a prediction of occurrence.",
+            "probability": 0.12320000000000003,
+            "probability_percent": 12.32,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.16882744887305468,
+            "risk_score_percent": 16.88,
+            "safety_advice": [
+                "Identify safe drop-cover-hold locations.",
+                "Secure heavy furniture.",
+                "Keep emergency kits ready."
+            ]
+        },
+        "flood": {
+            "confidence_percent": 91.0,
+            "extra": {
+                "confidence_bucket": "high",
+                "consistency_check": {
+                    "reason": "rainfall contradiction",
+                    "valid": false
+                },
+                "derived": {
+                    "soil_moisture": 0.0
+                },
+                "fusion_type": "adaptive_ml_balanced_60_40_rainfall_zero_hard_sanity",
+                "ml_score": 0.3,
+                "ml_used": true,
+                "rule_score": 0.2
+            },
+            "factors_used": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "insight": "Dry conditions with no rainfall indicate minimal flood-triggering factors. Soil saturation remains low.",
+            "interpretation": "Environment is not currently conducive to flooding. This is a low susceptibility state.",
+            "probability": 0.18,
+            "probability_percent": 18.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (12.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.18,
+            "risk_score_percent": 18.0,
+            "safety_advice": [
+                "No immediate flood precautions required.",
+                "Monitor rainfall updates during weather changes.",
+                "Keep drainage areas clear as a precaution."
+            ]
+        },
+        "hurricane": {
+            "confidence_percent": 92.0,
+            "extra": {
+                "confidence_bucket": "low",
+                "consistency_check": {
+                    "reason": "inland location",
+                    "valid": false
+                },
+                "derived": {
+                    "storm_index": 0.01110179640718563
+                },
+                "fusion_type": "adaptive_ml_low_60_40_inland_suppression",
+                "ml_score": 0.0,
+                "ml_used": true,
+                "rule_score": 0.1
+            },
+            "factors_used": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "insight": "Geographic location is inland, reducing exposure to cyclone systems.",
+            "interpretation": "Hurricane-related risk is negligible.",
+            "probability": 0.014000000000000002,
+            "probability_percent": 1.4,
+            "reasoning": "High temperature (41.0°C), wind_speed (11.1km/h), and pressure (1002.0hPa) produce storm_index (0.0111). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.01765151067582391,
+            "risk_score_percent": 1.77,
+            "safety_advice": [
+                "No cyclone-specific precautions required.",
+                "Stay informed during regional storm alerts.",
+                "Secure outdoor objects during strong winds."
+            ]
+        },
+        "landslide": {
+            "confidence_percent": 89.2,
+            "extra": {
+                "confidence_bucket": "high",
+                "consistency_check": {
+                    "reason": "rainfall contradiction",
+                    "valid": false
+                },
+                "derived": {
+                    "slope_factor": 0.7,
+                    "soil_saturation": 3.5999999999999996
+                },
+                "fusion_type": "adaptive_ml_balanced_60_40_landslide_requires_rain",
+                "ml_score": 0.86,
+                "ml_used": true,
+                "rule_score": 0.25
+            },
+            "factors_used": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "insight": "Lack of rainfall results in low soil saturation, reducing slope instability.",
+            "interpretation": "Landslide risk is minimal under dry conditions.",
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (12.0%) yield soil_saturation (3.6) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.2,
+            "risk_score_percent": 20.0,
+            "safety_advice": [
+                "No immediate landslide threat.",
+                "Stay cautious in hilly terrain during future rainfall.",
+                "Monitor slope conditions after heavy rains."
+            ]
+        },
+        "wildfire": {
+            "confidence_percent": 92.0,
+            "extra": {
+                "confidence_bucket": "high",
+                "consistency_check": {
+                    "reason": "",
+                    "valid": true
+                },
+                "derived": {
+                    "dryness_index": 36.08
+                },
+                "fusion_type": "adaptive_ml_balanced_60_40",
+                "ml_score": 0.9867,
+                "ml_used": true,
+                "rule_score": 0.9
+            },
+            "factors_used": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "insight": "High temperature and very low humidity are increasing surface dryness, creating conditions favorable for wildfire ignition.",
+            "interpretation": "Environment shows high fire susceptibility, not an active fire.",
+            "probability": 0.952,
+            "probability_percent": 95.2,
+            "reasoning": "High temperature (41.0°C) with Low humidity (12.0%) creates dryness_index (36.08), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.8773039966160343,
+            "risk_score_percent": 87.73,
+            "safety_advice": [
+                "Avoid open flames in dry vegetation areas.",
+                "Keep water or extinguishers accessible.",
+                "Monitor local fire alerts."
+            ]
+        }
+    }
+}
+
+
+{
+    "forecast": [
+        {
+            "alert": "MEDIUM",
+            "daily_risk_score": 0.6823072,
+            "date": "2026-04-15",
+            "predictions": {
+                "earthquake": {
+                    "confidence_percent": 64.71,
+                    "extra": {
+                        "confidence_interval": [
+                            0.3381,
+                            0.4677
+                        ],
+                        "derived": {
+                            "historical_risk": 0.5113777777777778,
+                            "seismic_activity": 0.322,
+                            "tectonic_zone_index": 0.094
+                        },
+                        "feature_importance": {
+                            "historical_risk": 0.3,
+                            "seismic_activity": 0.5,
+                            "tectonic_zone_index": 0.2
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.4029,
+                        "rule_score": 0.4029,
+                        "temporal_noise": 0.042,
+                        "uncertainty_score": 0.024
+                    },
+                    "factors_used": [
+                        "seismic_activity",
+                        "historical_risk",
+                        "tectonic_zone_index",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.35818733333333336,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for earthquake.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.35818733333333336
+                },
+                "flood": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8762,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 32.99824,
+                            "saturation": 3.5999999999999996,
+                            "storm_index": 0.016678899082568806
+                        },
+                        "feature_importance": {
+                            "humidity": 12.0,
+                            "rainfall": 0.0,
+                            "temperature": 37.498000000000005,
+                            "wind_speed": 16.7256
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 1.0,
+                        "rule_score": 0.1572,
+                        "temporal_noise": 0.042,
+                        "uncertainty_score": 0.319
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6823072,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for flood.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6823072
+                },
+                "hurricane": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.0,
+                            0.0749
+                        ],
+                        "derived": {
+                            "dryness": 32.99824,
+                            "saturation": 3.5999999999999996,
+                            "storm_index": 0.016678899082568806
+                        },
+                        "feature_importance": {
+                            "humidity": 12.0,
+                            "rainfall": 0.0,
+                            "temperature": 37.498000000000005,
+                            "wind_speed": 16.7256
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.0,
+                        "rule_score": 0.1439,
+                        "temporal_noise": 0.042,
+                        "uncertainty_score": 0.0743
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.03915760029357798,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for hurricane.",
+                    "risk_level": "Low",
+                    "risk_score": 0.03915760029357798
+                },
+                "landslide": {
+                    "confidence_percent": 83.8,
+                    "extra": {
+                        "confidence_interval": [
+                            0.7445,
+                            0.9755
+                        ],
+                        "derived": {
+                            "dryness": 32.99824,
+                            "saturation": 3.5999999999999996,
+                            "storm_index": 0.016678899082568806
+                        },
+                        "feature_importance": {
+                            "humidity": 12.0,
+                            "rainfall": 0.0,
+                            "temperature": 37.498000000000005,
+                            "wind_speed": 16.7256
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.86,
+                        "rule_score": 0.1364,
+                        "temporal_noise": 0.042,
+                        "uncertainty_score": 0.2773
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.5877898181818182,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for landslide.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.5877898181818182
+                },
+                "wildfire": {
+                    "confidence_percent": 93.93,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8164,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 32.99824,
+                            "saturation": 3.5999999999999996,
+                            "storm_index": 0.016678899082568806
+                        },
+                        "feature_importance": {
+                            "humidity": 12.0,
+                            "rainfall": 0.0,
+                            "temperature": 37.498000000000005,
+                            "wind_speed": 16.7256
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.92,
+                        "rule_score": 0.3661,
+                        "temporal_noise": 0.042,
+                        "uncertainty_score": 0.2179
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6804104074805194,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for wildfire.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6804104074805194
+                }
+            }
+        },
+        {
+            "alert": "MEDIUM",
+            "daily_risk_score": 0.7027986686716621,
+            "date": "2026-04-16",
+            "predictions": {
+                "earthquake": {
+                    "confidence_percent": 65.69,
+                    "extra": {
+                        "confidence_interval": [
+                            0.329,
+                            0.4571
+                        ],
+                        "derived": {
+                            "historical_risk": 0.5113777777777778,
+                            "seismic_activity": 0.3022657804869644,
+                            "tectonic_zone_index": 0.094
+                        },
+                        "feature_importance": {
+                            "historical_risk": 0.3,
+                            "seismic_activity": 0.5,
+                            "tectonic_zone_index": 0.2
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.3931,
+                        "rule_score": 0.3931,
+                        "temporal_noise": 0.1276,
+                        "uncertainty_score": 0.0202
+                    },
+                    "factors_used": [
+                        "seismic_activity",
+                        "historical_risk",
+                        "tectonic_zone_index",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.3601562172285141,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for earthquake.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.3601562172285141
+                },
+                "flood": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8799,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 33.18089662522928,
+                            "saturation": 7.555926801566839,
+                            "storm_index": 0.018221109085647776
+                        },
+                        "feature_importance": {
+                            "humidity": 10.928135996628857,
+                            "rainfall": 6.1106942893974034,
+                            "temperature": 37.25182693378177,
+                            "wind_speed": 18.304698821072407
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 1.0,
+                        "rule_score": 0.1991,
+                        "temporal_noise": 0.1276,
+                        "uncertainty_score": 0.3005
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.7027986686716621,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for flood.",
+                    "risk_level": "High",
+                    "risk_score": 0.7027986686716621
+                },
+                "hurricane": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.0,
+                            0.0745
+                        ],
+                        "derived": {
+                            "dryness": 33.18089662522928,
+                            "saturation": 7.555926801566839,
+                            "storm_index": 0.018221109085647776
+                        },
+                        "feature_importance": {
+                            "humidity": 10.928135996628857,
+                            "rainfall": 6.1106942893974034,
+                            "temperature": 37.25182693378177,
+                            "wind_speed": 18.304698821072407
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.0,
+                        "rule_score": 0.1498,
+                        "temporal_noise": 0.1276,
+                        "uncertainty_score": 0.0726
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.05118056043657122,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for hurricane.",
+                    "risk_level": "Low",
+                    "risk_score": 0.05118056043657122
+                },
+                "landslide": {
+                    "confidence_percent": 83.8,
+                    "extra": {
+                        "confidence_interval": [
+                            0.7482,
+                            0.9718
+                        ],
+                        "derived": {
+                            "dryness": 33.18089662522928,
+                            "saturation": 7.555926801566839,
+                            "storm_index": 0.018221109085647776
+                        },
+                        "feature_importance": {
+                            "humidity": 10.928135996628857,
+                            "rainfall": 6.1106942893974034,
+                            "temperature": 37.25182693378177,
+                            "wind_speed": 18.304698821072407
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.86,
+                        "rule_score": 0.1778,
+                        "temporal_noise": 0.1276,
+                        "uncertainty_score": 0.2589
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6081925509938074,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for landslide.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6081925509938074
+                },
+                "wildfire": {
+                    "confidence_percent": 93.93,
+                    "extra": {
+                        "confidence_interval": [
+                            0.7342,
+                            0.9312
+                        ],
+                        "derived": {
+                            "dryness": 33.18089662522928,
+                            "saturation": 7.555926801566839,
+                            "storm_index": 0.018221109085647776
+                        },
+                        "feature_importance": {
+                            "humidity": 10.928135996628857,
+                            "rainfall": 6.1106942893974034,
+                            "temperature": 37.25182693378177,
+                            "wind_speed": 18.304698821072407
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.8327,
+                        "rule_score": 0.3397,
+                        "temporal_noise": 0.1276,
+                        "uncertainty_score": 0.1927
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6289285391604953,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for wildfire.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6289285391604953
+                }
+            }
+        },
+        {
+            "alert": "MEDIUM",
+            "daily_risk_score": 0.7244541249580644,
+            "date": "2026-04-17",
+            "predictions": {
+                "earthquake": {
+                    "confidence_percent": 63.89,
+                    "extra": {
+                        "confidence_interval": [
+                            0.3418,
+                            0.4805
+                        ],
+                        "derived": {
+                            "historical_risk": 0.5113777777777778,
+                            "seismic_activity": 0.3383588872289702,
+                            "tectonic_zone_index": 0.094
+                        },
+                        "feature_importance": {
+                            "historical_risk": 0.3,
+                            "seismic_activity": 0.5,
+                            "tectonic_zone_index": 0.2
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.4111,
+                        "rule_score": 0.4111,
+                        "temporal_noise": 0.1465,
+                        "uncertainty_score": 0.0468
+                    },
+                    "factors_used": [
+                        "seismic_activity",
+                        "historical_risk",
+                        "tectonic_zone_index",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.3783058740198107,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for earthquake.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.3783058740198107
+                },
+                "flood": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8803,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 33.14834577953025,
+                            "saturation": 15.605049925413935,
+                            "storm_index": 0.018141976205770263
+                        },
+                        "feature_importance": {
+                            "humidity": 10.146404307196944,
+                            "rainfall": 17.94446947607836,
+                            "temperature": 36.89150726127849,
+                            "wind_speed": 18.225898494056953
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 1.0,
+                        "rule_score": 0.2809,
+                        "temporal_noise": 0.1465,
+                        "uncertainty_score": 0.2985
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.7244541249580644,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for flood.",
+                    "risk_level": "High",
+                    "risk_score": 0.7244541249580644
+                },
+                "hurricane": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.0,
+                            0.0798
+                        ],
+                        "derived": {
+                            "dryness": 33.14834577953025,
+                            "saturation": 15.605049925413935,
+                            "storm_index": 0.018141976205770263
+                        },
+                        "feature_importance": {
+                            "humidity": 10.146404307196944,
+                            "rainfall": 17.94446947607836,
+                            "temperature": 36.89150726127849,
+                            "wind_speed": 18.225898494056953
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.0,
+                        "rule_score": 0.1495,
+                        "temporal_noise": 0.1465,
+                        "uncertainty_score": 0.0992
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.053450229505703814,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for hurricane.",
+                    "risk_level": "Low",
+                    "risk_score": 0.053450229505703814
+                },
+                "landslide": {
+                    "confidence_percent": 83.8,
+                    "extra": {
+                        "confidence_interval": [
+                            0.7486,
+                            0.9714
+                        ],
+                        "derived": {
+                            "dryness": 33.14834577953025,
+                            "saturation": 15.605049925413935,
+                            "storm_index": 0.018141976205770263
+                        },
+                        "feature_importance": {
+                            "humidity": 10.146404307196944,
+                            "rainfall": 17.94446947607836,
+                            "temperature": 36.89150726127849,
+                            "wind_speed": 18.225898494056953
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.86,
+                        "rule_score": 0.2599,
+                        "temporal_noise": 0.1465,
+                        "uncertainty_score": 0.2569
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6299093676365064,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for landslide.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6299093676365064
+                },
+                "wildfire": {
+                    "confidence_percent": 93.93,
+                    "extra": {
+                        "confidence_interval": [
+                            0.5258,
+                            0.712
+                        ],
+                        "derived": {
+                            "dryness": 33.14834577953025,
+                            "saturation": 15.605049925413935,
+                            "storm_index": 0.018141976205770263
+                        },
+                        "feature_importance": {
+                            "humidity": 10.146404307196944,
+                            "rainfall": 17.94446947607836,
+                            "temperature": 36.89150726127849,
+                            "wind_speed": 18.225898494056953
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.6189,
+                        "rule_score": 0.2802,
+                        "temporal_noise": 0.1465,
+                        "uncertainty_score": 0.1654
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.48037087344888424,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for wildfire.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.48037087344888424
+                }
+            }
+        },
+        {
+            "alert": "MEDIUM",
+            "daily_risk_score": 0.6993877864670689,
+            "date": "2026-04-18",
+            "predictions": {
+                "earthquake": {
+                    "confidence_percent": 60.56,
+                    "extra": {
+                        "confidence_interval": [
+                            0.3801,
+                            0.5088
+                        ],
+                        "derived": {
+                            "historical_risk": 0.5113777777777778,
+                            "seismic_activity": 0.4049664480578189,
+                            "tectonic_zone_index": 0.094
+                        },
+                        "feature_importance": {
+                            "historical_risk": 0.3,
+                            "seismic_activity": 0.5,
+                            "tectonic_zone_index": 0.2
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.4444,
+                        "rule_score": 0.4444,
+                        "temporal_noise": 0.1833,
+                        "uncertainty_score": 0.0217
+                    },
+                    "factors_used": [
+                        "seismic_activity",
+                        "historical_risk",
+                        "tectonic_zone_index",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.41204972404972695,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for earthquake.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.41204972404972695
+                },
+                "flood": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8765,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 34.755075000000005,
+                            "saturation": 2.6625,
+                            "storm_index": 0.012793425476279418
+                        },
+                        "feature_importance": {
+                            "humidity": 8.875,
+                            "rainfall": 0.0,
+                            "temperature": 38.14,
+                            "wind_speed": 12.843
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 1.0,
+                        "rule_score": 0.1553,
+                        "temporal_noise": 0.1833,
+                        "uncertainty_score": 0.3173
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6993877864670689,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for flood.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6993877864670689
+                },
+                "hurricane": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.0,
+                            0.0734
+                        ],
+                        "derived": {
+                            "dryness": 34.755075000000005,
+                            "saturation": 2.6625,
+                            "storm_index": 0.012793425476279418
+                        },
+                        "feature_importance": {
+                            "humidity": 8.875,
+                            "rainfall": 0.0,
+                            "temperature": 38.14,
+                            "wind_speed": 12.843
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.0,
+                        "rule_score": 0.129,
+                        "temporal_noise": 0.1833,
+                        "uncertainty_score": 0.0668
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.053177323926912004,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for hurricane.",
+                    "risk_level": "Low",
+                    "risk_score": 0.053177323926912004
+                },
+                "landslide": {
+                    "confidence_percent": 83.8,
+                    "extra": {
+                        "confidence_interval": [
+                            0.7447,
+                            0.9753
+                        ],
+                        "derived": {
+                            "dryness": 34.755075000000005,
+                            "saturation": 2.6625,
+                            "storm_index": 0.012793425476279418
+                        },
+                        "feature_importance": {
+                            "humidity": 8.875,
+                            "rainfall": 0.0,
+                            "temperature": 38.14,
+                            "wind_speed": 12.843
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.86,
+                        "rule_score": 0.1321,
+                        "temporal_noise": 0.1833,
+                        "uncertainty_score": 0.2764
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6043072228307053,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for landslide.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6043072228307053
+                },
+                "wildfire": {
+                    "confidence_percent": 93.93,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8173,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 34.755075000000005,
+                            "saturation": 2.6625,
+                            "storm_index": 0.012793425476279418
+                        },
+                        "feature_importance": {
+                            "humidity": 8.875,
+                            "rainfall": 0.0,
+                            "temperature": 38.14,
+                            "wind_speed": 12.843
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.92,
+                        "rule_score": 0.3716,
+                        "temporal_noise": 0.1833,
+                        "uncertainty_score": 0.2136
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6992290274410948,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for wildfire.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6992290274410948
+                }
+            }
+        },
+        {
+            "alert": "MEDIUM",
+            "daily_risk_score": 0.6966900308070435,
+            "date": "2026-04-19",
+            "predictions": {
+                "earthquake": {
+                    "confidence_percent": 61.76,
+                    "extra": {
+                        "confidence_interval": [
+                            0.3717,
+                            0.4931
+                        ],
+                        "derived": {
+                            "historical_risk": 0.5113777777777778,
+                            "seismic_activity": 0.38088082787487937,
+                            "tectonic_zone_index": 0.094
+                        },
+                        "feature_importance": {
+                            "historical_risk": 0.3,
+                            "seismic_activity": 0.5,
+                            "tectonic_zone_index": 0.2
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.4324,
+                        "rule_score": 0.4324,
+                        "temporal_noise": 0.1603,
+                        "uncertainty_score": 0.0036
+                    },
+                    "factors_used": [
+                        "seismic_activity",
+                        "historical_risk",
+                        "tectonic_zone_index",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.3986407953204342,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for earthquake.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.3986407953204342
+                },
+                "flood": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8802,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 34.61870991195032,
+                            "saturation": 3.005024214279004,
+                            "storm_index": 0.011531727452687877
+                        },
+                        "feature_importance": {
+                            "humidity": 10.016747380930013,
+                            "rainfall": 0.0,
+                            "temperature": 38.47239225559361,
+                            "wind_speed": 11.566553422296092
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 1.0,
+                        "rule_score": 0.156,
+                        "temporal_noise": 0.1603,
+                        "uncertainty_score": 0.299
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6966900308070435,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for flood.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6966900308070435
+                },
+                "hurricane": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.0,
+                            0.0694
+                        ],
+                        "derived": {
+                            "dryness": 34.61870991195032,
+                            "saturation": 3.005024214279004,
+                            "storm_index": 0.011531727452687877
+                        },
+                        "feature_importance": {
+                            "humidity": 10.016747380930013,
+                            "rainfall": 0.0,
+                            "temperature": 38.47239225559361,
+                            "wind_speed": 11.566553422296092
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.0,
+                        "rule_score": 0.1242,
+                        "temporal_noise": 0.1603,
+                        "uncertainty_score": 0.0471
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.04917205434773175,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for hurricane.",
+                    "risk_level": "Low",
+                    "risk_score": 0.04917205434773175
+                },
+                "landslide": {
+                    "confidence_percent": 83.8,
+                    "extra": {
+                        "confidence_interval": [
+                            0.7484,
+                            0.9716
+                        ],
+                        "derived": {
+                            "dryness": 34.61870991195032,
+                            "saturation": 3.005024214279004,
+                            "storm_index": 0.011531727452687877
+                        },
+                        "feature_importance": {
+                            "humidity": 10.016747380930013,
+                            "rainfall": 0.0,
+                            "temperature": 38.47239225559361,
+                            "wind_speed": 11.566553422296092
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.86,
+                        "rule_score": 0.1337,
+                        "temporal_noise": 0.1603,
+                        "uncertainty_score": 0.2578
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6018152308077668,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for landslide.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6018152308077668
+                },
+                "wildfire": {
+                    "confidence_percent": 93.93,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8207,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 34.61870991195032,
+                            "saturation": 3.005024214279004,
+                            "storm_index": 0.011531727452687877
+                        },
+                        "feature_importance": {
+                            "humidity": 10.016747380930013,
+                            "rainfall": 0.0,
+                            "temperature": 38.47239225559361,
+                            "wind_speed": 11.566553422296092
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.92,
+                        "rule_score": 0.3683,
+                        "temporal_noise": 0.1603,
+                        "uncertainty_score": 0.1967
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.6955920161524988,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for wildfire.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.6955920161524988
+                }
+            }
+        },
+        {
+            "alert": "MEDIUM",
+            "daily_risk_score": 0.7132893002603239,
+            "date": "2026-04-20",
+            "predictions": {
+                "earthquake": {
+                    "confidence_percent": 59.4,
+                    "extra": {
+                        "confidence_interval": [
+                            0.3906,
+                            0.5214
+                        ],
+                        "derived": {
+                            "historical_risk": 0.5113777777777778,
+                            "seismic_activity": 0.42807706980745397,
+                            "tectonic_zone_index": 0.094
+                        },
+                        "feature_importance": {
+                            "historical_risk": 0.3,
+                            "seismic_activity": 0.5,
+                            "tectonic_zone_index": 0.2
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.456,
+                        "rule_score": 0.456,
+                        "temporal_noise": 0.1821,
+                        "uncertainty_score": 0.0271
+                    },
+                    "factors_used": [
+                        "seismic_activity",
+                        "historical_risk",
+                        "tectonic_zone_index",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.422025432531415,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for earthquake.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.422025432531415
+                },
+                "flood": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8796,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 35.03411477773181,
+                            "saturation": 8.830705348740238,
+                            "storm_index": 0.014293694918817395
+                        },
+                        "feature_importance": {
+                            "humidity": 9.615840514501159,
+                            "rainfall": 8.494218849128416,
+                            "temperature": 38.76134377656369,
+                            "wind_speed": 14.312913213900313
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 1.0,
+                        "rule_score": 0.2149,
+                        "temporal_noise": 0.1821,
+                        "uncertainty_score": 0.3019
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.7132893002603239,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for flood.",
+                    "risk_level": "High",
+                    "risk_score": 0.7132893002603239
+                },
+                "hurricane": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.0,
+                            0.0748
+                        ],
+                        "derived": {
+                            "dryness": 35.03411477773181,
+                            "saturation": 8.830705348740238,
+                            "storm_index": 0.014293694918817395
+                        },
+                        "feature_importance": {
+                            "humidity": 9.615840514501159,
+                            "rainfall": 8.494218849128416,
+                            "temperature": 38.76134377656369,
+                            "wind_speed": 14.312913213900313
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.0,
+                        "rule_score": 0.1347,
+                        "temporal_noise": 0.1821,
+                        "uncertainty_score": 0.0742
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.05436796964260779,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for hurricane.",
+                    "risk_level": "Low",
+                    "risk_score": 0.05436796964260779
+                },
+                "landslide": {
+                    "confidence_percent": 83.8,
+                    "extra": {
+                        "confidence_interval": [
+                            0.7479,
+                            0.9721
+                        ],
+                        "derived": {
+                            "dryness": 35.03411477773181,
+                            "saturation": 8.830705348740238,
+                            "storm_index": 0.014293694918817395
+                        },
+                        "feature_importance": {
+                            "humidity": 9.615840514501159,
+                            "rainfall": 8.494218849128416,
+                            "temperature": 38.76134377656369,
+                            "wind_speed": 14.312913213900313
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.86,
+                        "rule_score": 0.1928,
+                        "temporal_noise": 0.1821,
+                        "uncertainty_score": 0.2606
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.618487418196638,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for landslide.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.618487418196638
+                },
+                "wildfire": {
+                    "confidence_percent": 93.93,
+                    "extra": {
+                        "confidence_interval": [
+                            0.6529,
+                            0.8416
+                        ],
+                        "derived": {
+                            "dryness": 35.03411477773181,
+                            "saturation": 8.830705348740238,
+                            "storm_index": 0.014293694918817395
+                        },
+                        "feature_importance": {
+                            "humidity": 9.615840514501159,
+                            "rainfall": 8.494218849128416,
+                            "temperature": 38.76134377656369,
+                            "wind_speed": 14.312913213900313
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.7472,
+                        "rule_score": 0.3338,
+                        "temporal_noise": 0.1821,
+                        "uncertainty_score": 0.1718
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.5795749922552291,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for wildfire.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.5795749922552291
+                }
+            }
+        },
+        {
+            "alert": "MEDIUM",
+            "daily_risk_score": 0.7123439986927939,
+            "date": "2026-04-21",
+            "predictions": {
+                "earthquake": {
+                    "confidence_percent": 58.65,
+                    "extra": {
+                        "confidence_interval": [
+                            0.3994,
+                            0.5275
+                        ],
+                        "derived": {
+                            "historical_risk": 0.5113777777777778,
+                            "seismic_activity": 0.4430147559555329,
+                            "tectonic_zone_index": 0.094
+                        },
+                        "feature_importance": {
+                            "historical_risk": 0.3,
+                            "seismic_activity": 0.5,
+                            "tectonic_zone_index": 0.2
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.4635,
+                        "rule_score": 0.4635,
+                        "temporal_noise": 0.1881,
+                        "uncertainty_score": 0.0201
+                    },
+                    "factors_used": [
+                        "seismic_activity",
+                        "historical_risk",
+                        "tectonic_zone_index",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.42930637810748234,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for earthquake.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.42930637810748234
+                },
+                "flood": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.8805,
+                            1.0
+                        ],
+                        "derived": {
+                            "dryness": 36.035743670502406,
+                            "saturation": 7.804492975719179,
+                            "storm_index": 0.014907579425497438
+                        },
+                        "feature_importance": {
+                            "humidity": 8.329245806475933,
+                            "rainfall": 7.579598905394856,
+                            "temperature": 39.309967489116715,
+                            "wind_speed": 14.94732959212121
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 1.0,
+                        "rule_score": 0.2077,
+                        "temporal_noise": 0.1881,
+                        "uncertainty_score": 0.2974
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.7123439986927939,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for flood.",
+                    "risk_level": "High",
+                    "risk_score": 0.7123439986927939
+                },
+                "hurricane": {
+                    "confidence_percent": 95.0,
+                    "extra": {
+                        "confidence_interval": [
+                            0.0,
+                            0.0736
+                        ],
+                        "derived": {
+                            "dryness": 36.035743670502406,
+                            "saturation": 7.804492975719179,
+                            "storm_index": 0.014907579425497438
+                        },
+                        "feature_importance": {
+                            "humidity": 8.329245806475933,
+                            "rainfall": 7.579598905394856,
+                            "temperature": 39.309967489116715,
+                            "wind_speed": 14.94732959212121
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.0,
+                        "rule_score": 0.1371,
+                        "temporal_noise": 0.1881,
+                        "uncertainty_score": 0.0681
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.05567072762056142,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for hurricane.",
+                    "risk_level": "Low",
+                    "risk_score": 0.05567072762056142
+                },
+                "landslide": {
+                    "confidence_percent": 83.8,
+                    "extra": {
+                        "confidence_interval": [
+                            0.7487,
+                            0.9713
+                        ],
+                        "derived": {
+                            "dryness": 36.035743670502406,
+                            "saturation": 7.804492975719179,
+                            "storm_index": 0.014907579425497438
+                        },
+                        "feature_importance": {
+                            "humidity": 8.329245806475933,
+                            "rainfall": 7.579598905394856,
+                            "temperature": 39.309967489116715,
+                            "wind_speed": 14.94732959212121
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.86,
+                        "rule_score": 0.1846,
+                        "temporal_noise": 0.1881,
+                        "uncertainty_score": 0.2565
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.617294617752308,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for landslide.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.617294617752308
+                },
+                "wildfire": {
+                    "confidence_percent": 93.93,
+                    "extra": {
+                        "confidence_interval": [
+                            0.6791,
+                            0.8669
+                        ],
+                        "derived": {
+                            "dryness": 36.035743670502406,
+                            "saturation": 7.804492975719179,
+                            "storm_index": 0.014907579425497438
+                        },
+                        "feature_importance": {
+                            "humidity": 8.329245806475933,
+                            "rainfall": 7.579598905394856,
+                            "temperature": 39.309967489116715,
+                            "wind_speed": 14.94732959212121
+                        },
+                        "fusion_type": "ml_primary_hybrid_70_20_10_adaptive",
+                        "ml_score": 0.773,
+                        "rule_score": 0.3467,
+                        "temporal_noise": 0.1881,
+                        "uncertainty_score": 0.1693
+                    },
+                    "factors_used": [
+                        "temperature",
+                        "humidity",
+                        "rainfall",
+                        "pressure",
+                        "wind_speed",
+                        "lat",
+                        "lon"
+                    ],
+                    "probability": 0.5998546511842235,
+                    "reasoning": "ML-first forecast with rule correction and temporal perturbation for wildfire.",
+                    "risk_level": "Medium",
+                    "risk_score": 0.5998546511842235
+                }
+            }
+        }
+    ],
+    "lat": 21.14,
+    "lon": 79.08,
+    "timeline": [
+        {
+            "date": "2026-04-15",
+            "risk_score": 0.6823072
+        },
+        {
+            "date": "2026-04-16",
+            "risk_score": 0.7027986686716621
+        },
+        {
+            "date": "2026-04-17",
+            "risk_score": 0.7244541249580644
+        },
+        {
+            "date": "2026-04-18",
+            "risk_score": 0.6993877864670689
+        },
+        {
+            "date": "2026-04-19",
+            "risk_score": 0.6966900308070435
+        },
+        {
+            "date": "2026-04-20",
+            "risk_score": 0.7132893002603239
+        },
+        {
+            "date": "2026-04-21",
+            "risk_score": 0.7123439986927939
+        }
+    ]
+}
+
+
+
+{
+    "count": 85,
+    "predictions": [
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Wed, 15 Apr 2026 08:46:09 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69df505102251ea6a99c7c53",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.952,
+            "probability_percent": 95.2,
+            "reasoning": "High temperature (41.0°C) with Low humidity (12.0%) creates dryness_index (36.08), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.917190942569907,
+            "risk_score_percent": 91.72,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Wed, 15 Apr 2026 08:46:09 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69df505102251ea6a99c7c52",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (12.0%) yield soil_saturation (3.6) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.19600000143327231,
+            "risk_score_percent": 19.6,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Wed, 15 Apr 2026 08:46:09 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69df505102251ea6a99c7c51",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.014000000000000002,
+            "probability_percent": 1.4,
+            "reasoning": "High temperature (41.0°C), wind_speed (11.1km/h), and pressure (1002.0hPa) produce storm_index (0.0111). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.01094972109948828,
+            "risk_score_percent": 1.09,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 91.0,
+            "created_at": "Wed, 15 Apr 2026 08:46:09 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69df505102251ea6a99c7c50",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.18,
+            "probability_percent": 18.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (12.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.18,
+            "risk_score_percent": 18.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Wed, 15 Apr 2026 08:46:09 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69df505102251ea6a99c7c4f",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12320000000000003,
+            "probability_percent": 12.32,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.113474130279062,
+            "risk_score_percent": 11.35,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 17:10:51 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de751bb414997af7cab867",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.836,
+            "probability_percent": 83.6,
+            "reasoning": "High temperature (32.0°C) with Low humidity (23.0%) creates dryness_index (24.64), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.8359698085663569,
+            "risk_score_percent": 83.6,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Tue, 14 Apr 2026 17:10:50 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de751bb414997af7cab866",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (23.0%) yield soil_saturation (6.9) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.19600001194393601,
+            "risk_score_percent": 19.6,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 17:10:50 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de751ab414997af7cab865",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.014000000000000002,
+            "probability_percent": 1.4,
+            "reasoning": "High temperature (32.0°C), wind_speed (7.4km/h), and pressure (1006.0hPa) produce storm_index (0.0074). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.010949724757031223,
+            "risk_score_percent": 1.09,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 91.0,
+            "created_at": "Tue, 14 Apr 2026 17:10:50 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de751ab414997af7cab864",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.18,
+            "probability_percent": 18.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (23.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.18,
+            "risk_score_percent": 18.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 17:10:50 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de751ab414997af7cab863",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12320000000000003,
+            "probability_percent": 12.32,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.11347554282942492,
+            "risk_score_percent": 11.35,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 17:00:51 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de72c3b414997af7cab85d",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.836,
+            "probability_percent": 83.6,
+            "reasoning": "High temperature (32.0°C) with Low humidity (23.0%) creates dryness_index (24.64), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.835899361887857,
+            "risk_score_percent": 83.59,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Tue, 14 Apr 2026 17:00:51 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de72c3b414997af7cab85c",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (23.0%) yield soil_saturation (6.9) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.1960000995328,
+            "risk_score_percent": 19.6,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 17:00:51 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de72c3b414997af7cab85b",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.014000000000000002,
+            "probability_percent": 1.4,
+            "reasoning": "High temperature (32.0°C), wind_speed (7.4km/h), and pressure (1006.0hPa) produce storm_index (0.0074). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.010949759590773553,
+            "risk_score_percent": 1.09,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 91.0,
+            "created_at": "Tue, 14 Apr 2026 17:00:51 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de72c3b414997af7cab85a",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.18,
+            "probability_percent": 18.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (23.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.18,
+            "risk_score_percent": 18.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 17:00:50 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de72c2b414997af7cab859",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12320000000000003,
+            "probability_percent": 12.32,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.11348142845593717,
+            "risk_score_percent": 11.35,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:50:51 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de706bb414997af7cab853",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.836,
+            "probability_percent": 83.6,
+            "reasoning": "High temperature (32.0°C) with Low humidity (23.0%) creates dryness_index (24.64), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.8356645396261904,
+            "risk_score_percent": 83.57,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Tue, 14 Apr 2026 16:50:51 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de706bb414997af7cab852",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (23.0%) yield soil_saturation (6.9) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.19600082944,
+            "risk_score_percent": 19.6,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:50:51 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de706bb414997af7cab851",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.014000000000000002,
+            "probability_percent": 1.4,
+            "reasoning": "High temperature (32.0°C), wind_speed (7.4km/h), and pressure (1006.0hPa) produce storm_index (0.0074). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.010950091340700501,
+            "risk_score_percent": 1.1,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 91.0,
+            "created_at": "Tue, 14 Apr 2026 16:50:51 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de706bb414997af7cab850",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.18,
+            "probability_percent": 18.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (23.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.18,
+            "risk_score_percent": 18.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 16:50:50 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de706bb414997af7cab84f",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12320000000000003,
+            "probability_percent": 12.32,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.1135059518997381,
+            "risk_score_percent": 11.35,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:40:51 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6e13b414997af7cab849",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.834,
+            "probability_percent": 83.4,
+            "reasoning": "High temperature (34.0°C) with Low humidity (22.0%) creates dryness_index (26.52), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.8348817987539681,
+            "risk_score_percent": 83.49,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Tue, 14 Apr 2026 16:40:51 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6e13b414997af7cab848",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (22.0%) yield soil_saturation (6.6) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.196006912,
+            "risk_score_percent": 19.6,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:40:51 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6e13b414997af7cab847",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.014000000000000002,
+            "probability_percent": 1.4,
+            "reasoning": "High temperature (34.0°C), wind_speed (1.8km/h), and pressure (1006.0hPa) produce storm_index (0.0018). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.01095325086381429,
+            "risk_score_percent": 1.1,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 91.0,
+            "created_at": "Tue, 14 Apr 2026 16:40:51 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6e13b414997af7cab846",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.18,
+            "probability_percent": 18.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (22.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.18,
+            "risk_score_percent": 18.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 16:40:51 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de6e13b414997af7cab845",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12320000000000003,
+            "probability_percent": 12.32,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.11360813291557535,
+            "risk_score_percent": 11.36,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:30:50 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6bbab414997af7cab83f",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.834,
+            "probability_percent": 83.4,
+            "reasoning": "High temperature (34.0°C) with Low humidity (22.0%) creates dryness_index (26.52), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.8369393291798936,
+            "risk_score_percent": 83.69,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Tue, 14 Apr 2026 16:30:50 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6bbab414997af7cab83e",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (22.0%) yield soil_saturation (6.6) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.1960576,
+            "risk_score_percent": 19.61,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:30:50 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6bbab414997af7cab83d",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.014000000000000002,
+            "probability_percent": 1.4,
+            "reasoning": "High temperature (34.0°C), wind_speed (1.8km/h), and pressure (1006.0hPa) produce storm_index (0.0018). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.01098334156013609,
+            "risk_score_percent": 1.1,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 91.0,
+            "created_at": "Tue, 14 Apr 2026 16:30:50 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6bbab414997af7cab83c",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.18,
+            "probability_percent": 18.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (22.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.18,
+            "risk_score_percent": 18.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 16:30:50 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de6bbab414997af7cab83b",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12320000000000003,
+            "probability_percent": 12.32,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.11403388714823055,
+            "risk_score_percent": 11.4,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:20:50 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6962b414997af7cab835",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.834,
+            "probability_percent": 83.4,
+            "reasoning": "High temperature (34.0°C) with Low humidity (22.0%) creates dryness_index (26.52), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.8437977639329786,
+            "risk_score_percent": 84.38,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Tue, 14 Apr 2026 16:20:50 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6962b414997af7cab834",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (22.0%) yield soil_saturation (6.6) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.19648,
+            "risk_score_percent": 19.65,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:20:50 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6962b414997af7cab833",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.014000000000000002,
+            "probability_percent": 1.4,
+            "reasoning": "High temperature (34.0°C), wind_speed (1.8km/h), and pressure (1006.0hPa) produce storm_index (0.0018). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.011269919620343693,
+            "risk_score_percent": 1.13,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 91.0,
+            "created_at": "Tue, 14 Apr 2026 16:20:50 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de6962b414997af7cab832",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.18,
+            "probability_percent": 18.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (22.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.18,
+            "risk_score_percent": 18.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 16:20:50 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de6962b414997af7cab831",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12320000000000003,
+            "probability_percent": 12.32,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.11580786311762728,
+            "risk_score_percent": 11.58,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:01:08 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de64c4825febdec6b251a5",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.836,
+            "probability_percent": 83.6,
+            "reasoning": "High temperature (31.0°C) with Moderate humidity (30.0%) creates dryness_index (21.70), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.8666592131099284,
+            "risk_score_percent": 86.67,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 87.2,
+            "created_at": "Tue, 14 Apr 2026 16:01:08 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de64c4825febdec6b251a4",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Moderate humidity (30.0%) yield soil_saturation (9.0) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.2,
+            "risk_score_percent": 20.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 16:01:08 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de64c4825febdec6b251a3",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.014000000000000002,
+            "probability_percent": 1.4,
+            "reasoning": "High temperature (31.0°C), wind_speed (1.8km/h), and pressure (1006.0hPa) produce storm_index (0.0018). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.01399923447946374,
+            "risk_score_percent": 1.4,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.0,
+            "created_at": "Tue, 14 Apr 2026 16:01:08 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de64c4825febdec6b251a2",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.2,
+            "probability_percent": 20.0,
+            "reasoning": "Low rainfall (0.0 mm) and Moderate humidity (30.0%) produce soil_moisture (0.0), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.2,
+            "risk_score_percent": 20.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 16:01:07 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de64c4825febdec6b251a1",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12320000000000003,
+            "probability_percent": 12.32,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.12319942965678028,
+            "risk_score_percent": 12.32,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 15:02:15 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de56f7e57cd35172ac1092",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.9229999999999999,
+            "probability_percent": 92.3,
+            "reasoning": "High temperature (33.0°C) with Low humidity (22.0%) creates dryness_index (25.74), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.9381973770330951,
+            "risk_score_percent": 93.82,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 87.2,
+            "created_at": "Tue, 14 Apr 2026 15:02:15 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de56f7e57cd35172ac1091",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.5379499999999999,
+            "probability_percent": 53.79,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (22.0%) yield soil_saturation (6.6) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.47666047453266325,
+            "risk_score_percent": 47.67,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 15:02:15 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de56f7e57cd35172ac1090",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.04000000000000001,
+            "probability_percent": 4.0,
+            "reasoning": "High temperature (33.0°C), wind_speed (3.7km/h), and pressure (1005.0hPa) produce storm_index (0.0037). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.0399927093282261,
+            "risk_score_percent": 4.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 15:02:15 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de56f7e57cd35172ac108f",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.616,
+            "probability_percent": 61.6,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (22.0%) produce soil_moisture (6.6), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.5458174567798476,
+            "risk_score_percent": 54.58,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 15:02:15 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de56f7e57cd35172ac108e",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.15400000000000003,
+            "probability_percent": 15.4,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.1539976235699178,
+            "risk_score_percent": 15.4,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 11:00:24 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de1e484e80a0bcd65141e8",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.9736666666666667,
+            "probability_percent": 97.37,
+            "reasoning": "High temperature (41.0°C) with Low humidity (13.0%) creates dryness_index (35.67), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.9736579234436507,
+            "risk_score_percent": 97.37,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 87.2,
+            "created_at": "Tue, 14 Apr 2026 11:00:24 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de1e484e80a0bcd65141e7",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.5379499999999999,
+            "probability_percent": 53.79,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (13.0%) yield soil_saturation (3.9) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.47664511682220645,
+            "risk_score_percent": 47.66,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 11:00:24 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de1e484e80a0bcd65141e6",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.04000000000000001,
+            "probability_percent": 4.0,
+            "reasoning": "High temperature (41.0°C), wind_speed (13.0km/h), and pressure (1003.0hPa) produce storm_index (0.0129). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.03997569776075366,
+            "risk_score_percent": 4.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 11:00:24 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de1e484e80a0bcd65141e5",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.616,
+            "probability_percent": 61.6,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (13.0%) produce soil_moisture (3.9), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.54579741323737,
+            "risk_score_percent": 54.58,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 11:00:24 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de1e484e80a0bcd65141e4",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.15400000000000003,
+            "probability_percent": 15.4,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.1539920785663927,
+            "risk_score_percent": 15.4,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 10:31:24 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de177c1f3af8a2fda93611",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.9736666666666667,
+            "probability_percent": 97.37,
+            "reasoning": "High temperature (41.0°C) with Low humidity (15.0%) creates dryness_index (34.85), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.9736375225899466,
+            "risk_score_percent": 97.36,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 87.2,
+            "created_at": "Tue, 14 Apr 2026 10:31:24 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de177c1f3af8a2fda93610",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.5379499999999999,
+            "probability_percent": 53.79,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) yield soil_saturation (4.5) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.4765719848676499,
+            "risk_score_percent": 47.66,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 10:31:24 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de177c1f3af8a2fda9360f",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.04000000000000001,
+            "probability_percent": 4.0,
+            "reasoning": "High temperature (41.0°C), wind_speed (9.3km/h), and pressure (1004.0hPa) produce storm_index (0.0092). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.03991899253584552,
+            "risk_score_percent": 3.99,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 10:31:24 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de177c1f3af8a2fda9360e",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.616,
+            "probability_percent": 61.6,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) produce soil_moisture (4.5), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.545701967797,
+            "risk_score_percent": 54.57,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 10:31:24 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de177c1f3af8a2fda9360d",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.15400000000000003,
+            "probability_percent": 15.4,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.153973595221309,
+            "risk_score_percent": 15.4,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 10:18:48 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de14884c1db71e06df7ddb",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.9736666666666667,
+            "probability_percent": 97.37,
+            "reasoning": "High temperature (41.0°C) with Low humidity (15.0%) creates dryness_index (34.85), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.9735695197442666,
+            "risk_score_percent": 97.36,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 87.2,
+            "created_at": "Tue, 14 Apr 2026 10:18:48 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de14884c1db71e06df7dda",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.5379499999999999,
+            "probability_percent": 53.79,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) yield soil_saturation (4.5) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.47622373746499985,
+            "risk_score_percent": 47.62,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 10:18:48 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de14884c1db71e06df7dd9",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.04000000000000001,
+            "probability_percent": 4.0,
+            "reasoning": "High temperature (41.0°C), wind_speed (9.3km/h), and pressure (1004.0hPa) produce storm_index (0.0092). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.03972997511948506,
+            "risk_score_percent": 3.97,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 10:18:48 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de14884c1db71e06df7dd8",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.616,
+            "probability_percent": 61.6,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) produce soil_moisture (4.5), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.5452474656999999,
+            "risk_score_percent": 54.52,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 10:18:48 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de14884c1db71e06df7dd7",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.15400000000000003,
+            "probability_percent": 15.4,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.15391198407102993,
+            "risk_score_percent": 15.39,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 10:00:58 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de105aa6f252ffa03a59b4",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.9736666666666667,
+            "probability_percent": 97.37,
+            "reasoning": "High temperature (41.0°C) with Low humidity (15.0%) creates dryness_index (34.85), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.973342843592,
+            "risk_score_percent": 97.33,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 87.2,
+            "created_at": "Tue, 14 Apr 2026 10:00:58 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de105aa6f252ffa03a59b3",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.5379499999999999,
+            "probability_percent": 53.79,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) yield soil_saturation (4.5) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.4745654164999999,
+            "risk_score_percent": 47.46,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 10:00:58 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de105aa6f252ffa03a59b2",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.04000000000000001,
+            "probability_percent": 4.0,
+            "reasoning": "High temperature (41.0°C), wind_speed (14.8km/h), and pressure (1004.0hPa) produce storm_index (0.0148). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.03909991706495019,
+            "risk_score_percent": 3.91,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 10:00:58 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de105aa6f252ffa03a59b1",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.616,
+            "probability_percent": 61.6,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) produce soil_moisture (4.5), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.54308317,
+            "risk_score_percent": 54.31,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 10:00:58 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de105aa6f252ffa03a59b0",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.15400000000000003,
+            "probability_percent": 15.4,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.1537066135700998,
+            "risk_score_percent": 15.37,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:54:08 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de0ec0a6f252ffa03a59af",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.9736666666666667,
+            "probability_percent": 97.37,
+            "reasoning": "High temperature (41.0°C) with Low humidity (15.0%) creates dryness_index (34.85), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.972587256417778,
+            "risk_score_percent": 97.26,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 87.2,
+            "created_at": "Tue, 14 Apr 2026 09:54:07 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de0ebfa6f252ffa03a59ae",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.5379499999999999,
+            "probability_percent": 53.79,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) yield soil_saturation (4.5) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.4666686499999999,
+            "risk_score_percent": 46.67,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:54:07 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de0ebfa6f252ffa03a59ad",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.04000000000000001,
+            "probability_percent": 4.0,
+            "reasoning": "High temperature (41.0°C), wind_speed (14.8km/h), and pressure (1004.0hPa) produce storm_index (0.0148). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.036999723549833954,
+            "risk_score_percent": 3.7,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:54:07 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de0ebfa6f252ffa03a59ac",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.616,
+            "probability_percent": 61.6,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) produce soil_moisture (4.5), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.532777,
+            "risk_score_percent": 53.28,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 09:54:07 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de0ebfa6f252ffa03a59ab",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.15400000000000003,
+            "probability_percent": 15.4,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.15302204523366597,
+            "risk_score_percent": 15.3,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:44:40 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de0c884c9af3b80f81f699",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.9736666666666667,
+            "probability_percent": 97.37,
+            "reasoning": "High temperature (41.0°C) with Low humidity (15.0%) creates dryness_index (34.85), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.9700686325037045,
+            "risk_score_percent": 97.01,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Tue, 14 Apr 2026 09:44:40 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de0c884c9af3b80f81f698",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.5379499999999999,
+            "probability_percent": 53.79,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) yield soil_saturation (4.5) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.4290649999999999,
+            "risk_score_percent": 42.91,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:44:40 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de0c884c9af3b80f81f697",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.04000000000000001,
+            "probability_percent": 4.0,
+            "reasoning": "High temperature (41.0°C), wind_speed (14.8km/h), and pressure (1004.0hPa) produce storm_index (0.0148). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.02999907849944651,
+            "risk_score_percent": 3.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:44:40 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de0c884c9af3b80f81f696",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.616,
+            "probability_percent": 61.6,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) produce soil_moisture (4.5), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Medium",
+            "risk_score": 0.4836999999999999,
+            "risk_score_percent": 48.37,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 09:44:40 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de0c884c9af3b80f81f695",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.15400000000000003,
+            "probability_percent": 15.4,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.15074015077888653,
+            "risk_score_percent": 15.07,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:23:04 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de07788646a23582063b66",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.9866666666666667,
+            "probability_percent": 98.67,
+            "reasoning": "High temperature (41.0°C) with Low humidity (15.0%) creates dryness_index (34.85), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.9616732194567928,
+            "risk_score_percent": 96.17,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Tue, 14 Apr 2026 09:23:04 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de07788646a23582063b65",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.25,
+            "probability_percent": 25.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) yield soil_saturation (4.5) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.25,
+            "risk_score_percent": 25.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:23:04 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de07788646a23582063b64",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.0,
+            "probability_percent": 0.0,
+            "reasoning": "High temperature (41.0°C), wind_speed (11.1km/h), and pressure (1005.0hPa) produce storm_index (0.0111). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.006663594998155027,
+            "risk_score_percent": 0.67,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:23:03 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de07778646a23582063b63",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.25,
+            "probability_percent": 25.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) produce soil_moisture (4.5), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.25,
+            "risk_score_percent": 25.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 09:23:03 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de07778646a23582063b62",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12333333333333334,
+            "probability_percent": 12.33,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.14313383592962176,
+            "risk_score_percent": 14.31,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:21:23 GMT",
+            "disaster_type": "wildfire",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de07138646a23582063b5c",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.9866666666666667,
+            "probability_percent": 98.67,
+            "reasoning": "High temperature (41.0°C) with Low humidity (15.0%) creates dryness_index (34.85), increasing wildfire risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "High",
+            "risk_score": 0.9033551759670874,
+            "risk_score_percent": 90.34,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 89.2,
+            "created_at": "Tue, 14 Apr 2026 09:21:23 GMT",
+            "disaster_type": "landslide",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de07138646a23582063b5b",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.25,
+            "probability_percent": 25.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) yield soil_saturation (4.5) with slope_factor (0.70), increasing landslide risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.25,
+            "risk_score_percent": 25.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:21:23 GMT",
+            "disaster_type": "hurricane",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de07138646a23582063b5a",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.0,
+            "probability_percent": 0.0,
+            "reasoning": "High temperature (41.0°C), wind_speed (11.1km/h), and pressure (1005.0hPa) produce storm_index (0.0111). This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.022211983327183424,
+            "risk_score_percent": 2.22,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 92.0,
+            "created_at": "Tue, 14 Apr 2026 09:21:23 GMT",
+            "disaster_type": "flood",
+            "factors": [
+                "temperature",
+                "humidity",
+                "rainfall",
+                "wind_speed",
+                "pressure"
+            ],
+            "id": "69de07138646a23582063b59",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.25,
+            "probability_percent": 25.0,
+            "reasoning": "Low rainfall (0.0 mm) and Low humidity (15.0%) produce soil_moisture (4.5), indicating flood risk. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.25,
+            "risk_score_percent": 25.0,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        },
+        {
+            "confidence_percent": 81.53,
+            "created_at": "Tue, 14 Apr 2026 09:21:23 GMT",
+            "disaster_type": "earthquake",
+            "factors": [
+                "lat",
+                "lon",
+                "seismic_activity",
+                "historical_risk"
+            ],
+            "id": "69de07138646a23582063b58",
+            "location": {
+                "lat": 21.1458,
+                "lon": 79.0882
+            },
+            "probability": 0.12333333333333334,
+            "probability_percent": 12.33,
+            "reasoning": "Risk based on regional seismic activity and historical patterns, independent of weather. This prediction is a risk estimation based on environmental conditions and heuristic modeling. It is not a guaranteed disaster forecast.",
+            "risk_level": "Low",
+            "risk_score": 0.18933500865429476,
+            "risk_score_percent": 18.93,
+            "user_id": "69da80a6533b3d73fa9461b2"
+        }
+    ],
+    "range": "24h",
+    "success": true
+}

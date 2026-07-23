@@ -1,0 +1,504 @@
+{
+    "analysis": {
+        "correlation_summary": [
+            {
+                "disaster": "earthquake",
+                "risk_to_frequency_ratio": 0.004
+            },
+            {
+                "disaster": "landslide",
+                "risk_to_frequency_ratio": 0.009
+            },
+            {
+                "disaster": "flood",
+                "risk_to_frequency_ratio": 0.0095
+            },
+            {
+                "disaster": "wildfire",
+                "risk_to_frequency_ratio": 0.0267
+            },
+            {
+                "disaster": "hurricane",
+                "risk_to_frequency_ratio": 0.0007
+            }
+        ],
+        "disaster_distribution": [
+            {
+                "avg_risk_score": 0.1358,
+                "count": 34,
+                "disaster": "earthquake"
+            },
+            {
+                "avg_risk_score": 0.3065,
+                "count": 34,
+                "disaster": "landslide"
+            },
+            {
+                "avg_risk_score": 0.3247,
+                "count": 34,
+                "disaster": "flood"
+            },
+            {
+                "avg_risk_score": 0.9081,
+                "count": 34,
+                "disaster": "wildfire"
+            },
+            {
+                "avg_risk_score": 0.0226,
+                "count": 33,
+                "disaster": "hurricane"
+            }
+        ],
+        "system_risk_summary": {
+            "total_predictions_24h": 169
+        },
+        "trend_24h": [
+            {
+                "count": 34,
+                "time_bucket": "2026-04-14 09:00"
+            },
+            {
+                "count": 30,
+                "time_bucket": "2026-04-14 10:00"
+            },
+            {
+                "count": 10,
+                "time_bucket": "2026-04-14 11:00"
+            },
+            {
+                "count": 10,
+                "time_bucket": "2026-04-14 15:00"
+            },
+            {
+                "count": 50,
+                "time_bucket": "2026-04-14 16:00"
+            },
+            {
+                "count": 20,
+                "time_bucket": "2026-04-14 17:00"
+            },
+            {
+                "count": 15,
+                "time_bucket": "2026-04-15 08:00"
+            }
+        ]
+    },
+    "success": true
+}
+
+{
+    "analysis": {
+        "disaster": "flood",
+        "feature_importance": [
+            {
+                "feature": "rainfall",
+                "importance": 0.2
+            },
+            {
+                "feature": "humidity",
+                "importance": 0.2
+            },
+            {
+                "feature": "river_discharge",
+                "importance": 0.2
+            },
+            {
+                "feature": "water_level",
+                "importance": 0.2
+            },
+            {
+                "feature": "elevation",
+                "importance": 0.2
+            }
+        ],
+        "ml_feature_relationships": [
+            {
+                "feature": "rainfall",
+                "relationship": "monitored"
+            },
+            {
+                "feature": "humidity",
+                "relationship": "monitored"
+            },
+            {
+                "feature": "river_discharge",
+                "relationship": "monitored"
+            },
+            {
+                "feature": "water_level",
+                "relationship": "monitored"
+            },
+            {
+                "feature": "elevation",
+                "relationship": "monitored"
+            }
+        ],
+        "parameter_correlation": [
+            {
+                "correlation": 0.0,
+                "feature_pair": "rainfall~risk_score"
+            },
+            {
+                "correlation": 0.0,
+                "feature_pair": "humidity~risk_score"
+            },
+            {
+                "correlation": 0.0,
+                "feature_pair": "river_discharge~risk_score"
+            },
+            {
+                "correlation": 0.0,
+                "feature_pair": "water_level~risk_score"
+            },
+            {
+                "correlation": 0.0,
+                "feature_pair": "elevation~risk_score"
+            }
+        ],
+        "risk_trend": {
+            "24h": [
+                {
+                    "avg_probability": 0.4069,
+                    "avg_risk_score": 0.3572,
+                    "count": 7,
+                    "time_bucket": "2026-04-14 09:00"
+                },
+                {
+                    "avg_probability": 0.616,
+                    "avg_risk_score": 0.5425,
+                    "count": 6,
+                    "time_bucket": "2026-04-14 10:00"
+                },
+                {
+                    "avg_probability": 0.616,
+                    "avg_risk_score": 0.5457,
+                    "count": 2,
+                    "time_bucket": "2026-04-14 11:00"
+                },
+                {
+                    "avg_probability": 0.616,
+                    "avg_risk_score": 0.5458,
+                    "count": 2,
+                    "time_bucket": "2026-04-14 15:00"
+                },
+                {
+                    "avg_probability": 0.184,
+                    "avg_risk_score": 0.184,
+                    "count": 10,
+                    "time_bucket": "2026-04-14 16:00"
+                },
+                {
+                    "avg_probability": 0.18,
+                    "avg_risk_score": 0.18,
+                    "count": 4,
+                    "time_bucket": "2026-04-14 17:00"
+                },
+                {
+                    "avg_probability": 0.18,
+                    "avg_risk_score": 0.18,
+                    "count": 3,
+                    "time_bucket": "2026-04-15 08:00"
+                }
+            ],
+            "30d": [
+                {
+                    "avg_probability": 0.5251,
+                    "avg_risk_score": 0.3898,
+                    "count": 1,
+                    "time_bucket": "2026-04-13 09:00"
+                },
+                {
+                    "avg_probability": 0.5251,
+                    "avg_risk_score": 0.3898,
+                    "count": 9,
+                    "time_bucket": "2026-04-13 10:00"
+                },
+                {
+                    "avg_probability": 0.5123,
+                    "avg_risk_score": 0.3906,
+                    "count": 2,
+                    "time_bucket": "2026-04-13 13:00"
+                },
+                {
+                    "avg_probability": 0.5353,
+                    "avg_risk_score": 0.4108,
+                    "count": 6,
+                    "time_bucket": "2026-04-13 14:00"
+                },
+                {
+                    "avg_probability": 0.547,
+                    "avg_risk_score": 0.419,
+                    "count": 13,
+                    "time_bucket": "2026-04-13 16:00"
+                },
+                {
+                    "avg_probability": 0.2667,
+                    "avg_risk_score": 0.2886,
+                    "count": 3,
+                    "time_bucket": "2026-04-13 17:00"
+                },
+                {
+                    "avg_probability": 0.25,
+                    "avg_risk_score": 0.25,
+                    "count": 3,
+                    "time_bucket": "2026-04-13 18:00"
+                },
+                {
+                    "avg_probability": 0.25,
+                    "avg_risk_score": 0.25,
+                    "count": 3,
+                    "time_bucket": "2026-04-14 04:00"
+                },
+                {
+                    "avg_probability": 0.2,
+                    "avg_risk_score": 0.215,
+                    "count": 3,
+                    "time_bucket": "2026-04-14 08:00"
+                },
+                {
+                    "avg_probability": 0.4069,
+                    "avg_risk_score": 0.3572,
+                    "count": 7,
+                    "time_bucket": "2026-04-14 09:00"
+                },
+                {
+                    "avg_probability": 0.616,
+                    "avg_risk_score": 0.5425,
+                    "count": 6,
+                    "time_bucket": "2026-04-14 10:00"
+                },
+                {
+                    "avg_probability": 0.616,
+                    "avg_risk_score": 0.5457,
+                    "count": 2,
+                    "time_bucket": "2026-04-14 11:00"
+                },
+                {
+                    "avg_probability": 0.616,
+                    "avg_risk_score": 0.5458,
+                    "count": 2,
+                    "time_bucket": "2026-04-14 15:00"
+                },
+                {
+                    "avg_probability": 0.184,
+                    "avg_risk_score": 0.184,
+                    "count": 10,
+                    "time_bucket": "2026-04-14 16:00"
+                },
+                {
+                    "avg_probability": 0.18,
+                    "avg_risk_score": 0.18,
+                    "count": 4,
+                    "time_bucket": "2026-04-14 17:00"
+                },
+                {
+                    "avg_probability": 0.18,
+                    "avg_risk_score": 0.18,
+                    "count": 3,
+                    "time_bucket": "2026-04-15 08:00"
+                }
+            ],
+            "7d": [
+                {
+                    "avg_probability": 0.5251,
+                    "avg_risk_score": 0.3898,
+                    "count": 1,
+                    "time_bucket": "2026-04-13 09:00"
+                },
+                {
+                    "avg_probability": 0.5251,
+                    "avg_risk_score": 0.3898,
+                    "count": 9,
+                    "time_bucket": "2026-04-13 10:00"
+                },
+                {
+                    "avg_probability": 0.5123,
+                    "avg_risk_score": 0.3906,
+                    "count": 2,
+                    "time_bucket": "2026-04-13 13:00"
+                },
+                {
+                    "avg_probability": 0.5353,
+                    "avg_risk_score": 0.4108,
+                    "count": 6,
+                    "time_bucket": "2026-04-13 14:00"
+                },
+                {
+                    "avg_probability": 0.547,
+                    "avg_risk_score": 0.419,
+                    "count": 13,
+                    "time_bucket": "2026-04-13 16:00"
+                },
+                {
+                    "avg_probability": 0.2667,
+                    "avg_risk_score": 0.2886,
+                    "count": 3,
+                    "time_bucket": "2026-04-13 17:00"
+                },
+                {
+                    "avg_probability": 0.25,
+                    "avg_risk_score": 0.25,
+                    "count": 3,
+                    "time_bucket": "2026-04-13 18:00"
+                },
+                {
+                    "avg_probability": 0.25,
+                    "avg_risk_score": 0.25,
+                    "count": 3,
+                    "time_bucket": "2026-04-14 04:00"
+                },
+                {
+                    "avg_probability": 0.2,
+                    "avg_risk_score": 0.215,
+                    "count": 3,
+                    "time_bucket": "2026-04-14 08:00"
+                },
+                {
+                    "avg_probability": 0.4069,
+                    "avg_risk_score": 0.3572,
+                    "count": 7,
+                    "time_bucket": "2026-04-14 09:00"
+                },
+                {
+                    "avg_probability": 0.616,
+                    "avg_risk_score": 0.5425,
+                    "count": 6,
+                    "time_bucket": "2026-04-14 10:00"
+                },
+                {
+                    "avg_probability": 0.616,
+                    "avg_risk_score": 0.5457,
+                    "count": 2,
+                    "time_bucket": "2026-04-14 11:00"
+                },
+                {
+                    "avg_probability": 0.616,
+                    "avg_risk_score": 0.5458,
+                    "count": 2,
+                    "time_bucket": "2026-04-14 15:00"
+                },
+                {
+                    "avg_probability": 0.184,
+                    "avg_risk_score": 0.184,
+                    "count": 10,
+                    "time_bucket": "2026-04-14 16:00"
+                },
+                {
+                    "avg_probability": 0.18,
+                    "avg_risk_score": 0.18,
+                    "count": 4,
+                    "time_bucket": "2026-04-14 17:00"
+                },
+                {
+                    "avg_probability": 0.18,
+                    "avg_risk_score": 0.18,
+                    "count": 3,
+                    "time_bucket": "2026-04-15 08:00"
+                }
+            ]
+        },
+        "sample_rows": [
+            {
+                "confidence_percent": 89.0,
+                "created_at": "Wed, 15 Apr 2026 08:46:12 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            },
+            {
+                "confidence_percent": 91.0,
+                "created_at": "Wed, 15 Apr 2026 08:46:10 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            },
+            {
+                "confidence_percent": 91.0,
+                "created_at": "Wed, 15 Apr 2026 08:46:09 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            },
+            {
+                "confidence_percent": 91.0,
+                "created_at": "Tue, 14 Apr 2026 17:10:52 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            },
+            {
+                "confidence_percent": 91.0,
+                "created_at": "Tue, 14 Apr 2026 17:10:50 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            },
+            {
+                "confidence_percent": 91.0,
+                "created_at": "Tue, 14 Apr 2026 17:00:53 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            },
+            {
+                "confidence_percent": 91.0,
+                "created_at": "Tue, 14 Apr 2026 17:00:51 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            },
+            {
+                "confidence_percent": 91.0,
+                "created_at": "Tue, 14 Apr 2026 16:50:53 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            },
+            {
+                "confidence_percent": 91.0,
+                "created_at": "Tue, 14 Apr 2026 16:50:51 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            },
+            {
+                "confidence_percent": 91.0,
+                "created_at": "Tue, 14 Apr 2026 16:40:53 GMT",
+                "location": {
+                    "lat": 21.1458,
+                    "lon": 79.0882
+                },
+                "probability": 0.18,
+                "risk_score": 0.18
+            }
+        ]
+    },
+    "success": true
+}
