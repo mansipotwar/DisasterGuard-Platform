@@ -71,6 +71,69 @@ DisasterGuard uses machine learning models to analyze historical disaster data a
 
 The models process historical data along with real-time environmental information to provide disaster risk insights.
 
+## 📸 Screenshots & Demo
+
+### Dashboard
+<img src="assets/screenshots/dashboard.png" width="800">
+
+### AI Risk Prediction
+<img src="assets/screenshots/prediction.png" width="800">
+
+### Safe Route Planning
+<img src="assets/screenshots/route.png" width="800">
+
+
+## 🎥 Project Demo
+
+[Watch Demo Video](YOUR_VIDEO_LINK)
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run DisasterGuard locally.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/mansipotwar/DisasterGuard-Platform.git
+cd DisasterGuard-Platform
+
+### 2. Backend Setup
+
+pip install -r requirements.txt
+python run.py
+
+### 3. Frontend Setup
+
+cd frontend
+npm install
+npm run dev
+
+### 4. Environment Variables
+Create a .env file in the backend directory:
+
+WEATHER_API_KEY=your_api_key
+MAP_API_KEY=your_api_key
+MONGODB_URI=your_mongodb_connection_string
+
+
+## 📌 Project Status
+
+DisasterGuard is a functional prototype developed as a Final Year B.Tech project.
+
+The platform demonstrates AI-based disaster risk prediction, real-time weather monitoring, interactive mapping, and safety recommendation features.
+
+The system is currently in the improvement phase, focusing on enhancing prediction accuracy, expanding datasets, and optimizing performance.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
