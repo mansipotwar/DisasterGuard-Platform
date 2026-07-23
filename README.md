@@ -45,19 +45,19 @@ A full-stack disaster intelligence platform that predicts the risk of floods, ea
 
 ### Dashboard
 
-<img src="assets/screenshots/dashboard.png" width="800">
+<img src="assets/screenshots/dashboard.png" width="500">
 
 
 
 ### AI Risk Prediction
 
-<img src="assets/screenshots/prediction.png" width="800">
+<img src="assets/screenshots/prediction.png" width="500">
 
 
 
 ### Safe Route Planning
 
-<img src="assets/screenshots/route.png" width="800">
+<img src="assets/screenshots/route.png" width="500">
 
 ---
 
