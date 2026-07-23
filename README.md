@@ -2,146 +2,122 @@
   <img src="assets/banner.png" alt="DisasterGuard Banner" width="100%">
 </p>
 
-
 # 🌍 DisasterGuard Platform
 
-An AI-powered full-stack disaster prediction, risk analysis, and emergency response platform that helps users predict natural disasters, monitor weather conditions, receive safety recommendations, and plan safer evacuation routes.
+A full-stack disaster intelligence platform that predicts the risk of floods, earthquakes, cyclones, landslides, and wildfires using Machine Learning and real-time weather data.
 
-> Built using React, Flask, Python, Machine Learning, MongoDB, and modern web technologies.
+> 🎓 Final Year B.Tech Major Project
 
-## 🚨 Problem Statement
+---
 
-Natural disasters require quick access to reliable risk information and safety guidance. Existing solutions often provide only alerts without personalized risk analysis or safe route recommendations.
+## ✨ Features
 
-DisasterGuard addresses this gap by combining AI-based prediction, real-time data, and intelligent navigation to improve disaster awareness and decision-making.
+- 🤖 Multi-disaster risk prediction
+- 🌦️ Live weather monitoring
+- 🗺️ Interactive maps
+- 🛣️ Safe route navigation
+- 📊 Risk analysis dashboard
+- 📧 Safety alerts & recommendations
 
-## 💡 Solution Overview
+---
 
-DisasterGuard is an AI-powered platform that combines machine learning, real-time weather data, interactive maps, and routing services to provide disaster risk insights and safer navigation support.
-
-The system analyzes environmental data to predict risk levels and helps users make informed decisions during emergency situations.
-
-## ✨ Key Features
-
-- 🤖 **AI Disaster Prediction**  
-  Predicts disaster risk levels using Machine Learning models and historical datasets.
-
-- 🌦️ **Real-Time Weather Monitoring**  
-  Provides live weather insights using external APIs.
-
-- 🛣️ **Safe Route Planning**  
-  Generates optimized routes using mapping and routing services.
-
-- 🗺️ **Interactive Maps**  
-  Visualizes locations, risk levels, and safety information.
-
-- 📧 **Smart Alerts & Recommendations**  
-  Provides safety guidance and important disaster updates.
-
-- 📊 **AI-Powered Decision Support**  
-  Combines ML predictions and real-time data for better awareness.
-
-
-## 🛠️ Technology Stack
+## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=react,typescript,vite,tailwind,python,mongodb,googlecloud,flask,git,github,vscode,postman" />
+  <img src="https://skillicons.dev/icons?i=react,typescript,vite,tailwind,python,flask,mongodb,git,github,vscode,postman" />
 </p>
 
-<p align="center">
-React.js • TypeScript • Vite • Tailwind CSS • Python • Flask • MongoDB Atlas • 
-Scikit-learn • Pandas • NumPy • XGBoost • REST APIs
-</p>
+**Frontend:** React, TypeScript, Vite, Tailwind CSS
 
-## 🤖 Machine Learning & Data Sources
+**Backend:** Flask, Python
 
-DisasterGuard uses machine learning models to analyze historical disaster data and estimate risk levels.
+**Machine Learning:** Scikit-learn, XGBoost, Pandas, NumPy
 
-### ML Models
-- Random Forest
-- XGBoost
-- Logistic Regression
-- Decision Tree
+**Database:** MongoDB Atlas
 
-### Data Sources
-- 🌊 Flood datasets
-- 🌎 Earthquake records
-- 🌪️ Cyclone datasets
-- 🔥 Wildfire & Landslide datasets
+**Tools:** Git, GitHub, VS Code, Postman
 
-The models process historical data along with real-time environmental information to provide disaster risk insights.
+---
 
-## 📸 Screenshots & Demo
+# 📸 Screenshots & Demo
+
+
 
 ### Dashboard
+
 <img src="assets/screenshots/dashboard.png" width="800">
 
+
+
 ### AI Risk Prediction
+
 <img src="assets/screenshots/prediction.png" width="800">
 
+
+
 ### Safe Route Planning
+
 <img src="assets/screenshots/route.png" width="800">
 
+---
 
-## 🎥 Project Demo
+## ⚙️ Installation
 
-[Watch Demo Video](YOUR_VIDEO_LINK)
-
-## ⚙️ Installation & Setup
-
-Follow these steps to run DisasterGuard locally.
-
-### 1. Clone the Repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/mansipotwar/DisasterGuard-Platform.git
 cd DisasterGuard-Platform
+```
 
-### 2. Backend Setup
+### Backend
 
+```bash
 pip install -r requirements.txt
 python run.py
+```
 
-### 3. Frontend Setup
+### Frontend
 
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-### 4. Environment Variables
-Create a .env file in the backend directory:
+### Environment Variables
 
-WEATHER_API_KEY=your_api_key
-MAP_API_KEY=your_api_key
-MONGODB_URI=your_mongodb_connection_string
+Create a `.env` file using `.env.example` and add your own API keys.
 
 
-## 📌 Project Status
+## 🎥 Demo
 
-DisasterGuard is a functional prototype developed as a Final Year B.Tech project.
+🔗 **Live Demo:** Coming Soon
 
-The platform demonstrates AI-based disaster risk prediction, real-time weather monitoring, interactive mapping, and safety recommendation features.
+📺 **Project Walkthrough:** Coming Soon
 
-The system is currently in the improvement phase, focusing on enhancing prediction accuracy, expanding datasets, and optimizing performance.
+## 📂 Project Structure
 
+```text
+DisasterGuard-Platform/
+├── app/
+├── frontend/
+├── assets/
+├── mock/
+├── mocks/
+├── postman/
+├── .env.example
+├── requirements.txt
+└── run.py
+```
 
+## 📄 License
 
+This project is licensed under the MIT License.
 
+## 👩‍💻 Author
 
+**Mansi Potwar**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+- GitHub: https://github.com/mansipotwar
+- LinkedIn: https://www.linkedin.com/in/YOUR-LINKEDIN
