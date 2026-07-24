@@ -1,6 +1,6 @@
+import { CheckCircle, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -9,18 +9,22 @@ export default function Contact() {
   const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-    const { error } = await supabase.from('contacts').insert(form);
-    setLoading(false);
-    if (error) {
-      setError('Failed to send message. Please try again.');
-    } else {
-      setSubmitted(true);
-      setForm({ name: '', email: '', message: '' });
-    }
-  };
+  e.preventDefault();
+
+  setLoading(true);
+  setError('');
+
+  // Temporary demo (Supabase removed)
+  await new Promise((resolve) => setTimeout(resolve, 800));
+
+  setLoading(false);
+  setSubmitted(true);
+  setForm({
+    name: '',
+    email: '',
+    message: '',
+  });
+};
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'support@disalert.io', color: '#38bdf8' },
