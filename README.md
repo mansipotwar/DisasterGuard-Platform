@@ -90,11 +90,13 @@ npm run dev
 Create a `.env` file using `.env.example` and add your own API keys.
 
 
-## 🎥 Demo
+## 🎥 Demo & Showcase
 
-🔗 **Live Demo:** Coming Soon
+🔗 **Live Application:** https://disasterguard-frontend-git-main-maanasies-projects.vercel.app/
 
-📺 **Project Walkthrough:** Coming Soon
+🎬 **Quick Demo (LinkedIn):** https://linkedin.com/your-post-link
+
+📺 **Full Project Walkthrough:** https://youtube.com/your-video-link
 
 ## 📂 Project Structure
 
