@@ -6,7 +6,6 @@ import ForecastModal from '../components/ForecastModal';
 import RiskCard from '../components/RiskCard';
 import { useAuth } from '../contexts/AuthContext';
 import { geocodeLocation, mockPredict } from '../lib/mockPredict';
-
 import type { DisasterType, PredictionResult } from '../types';
 
 const disasterKeys: DisasterType[] = [
@@ -266,8 +265,7 @@ export default function Prediction() {
             <MapPin size={16} /> {result.location.full_name}
           </div>
 
-         <button onClick={handleSave}>
-  <Save />
+        <button onClick={handleSave}>
   Save (Coming Soon)
 </button>
 
