@@ -1,4 +1,4 @@
-import { Loader, MapPin, Search } from 'lucide-react';
+import { CheckCircle, Loader, MapPin, Save, Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { predictDisaster } from '../api/client';
@@ -6,6 +6,7 @@ import ForecastModal from '../components/ForecastModal';
 import RiskCard from '../components/RiskCard';
 import { useAuth } from '../contexts/AuthContext';
 import { geocodeLocation, mockPredict } from '../lib/mockPredict';
+
 import type { DisasterType, PredictionResult } from '../types';
 
 const disasterKeys: DisasterType[] = [
@@ -173,9 +174,21 @@ export default function Prediction() {
      SAVE
   ========================= */
   const handleSave = async () => {
-  // Saving feature temporarily disabled
-  alert("Save Predictions feature is coming soon!");
-};
+    if (!user || !result) return;
+
+    setSaving(true);
+
+    await supabase.from('saved_predictions').insert({
+      user_id: user.id,
+      location_name: result.location.full_name,
+      lat: result.location.lat,
+      lon: result.location.lon,
+      predictions: result.predictions
+    });
+
+    setSaving(false);
+    setSaved(true);
+  };
 
   return (
     <div style={{ padding: '5rem 2rem', maxWidth: '1300px', margin: 'auto' }}>
@@ -265,9 +278,12 @@ export default function Prediction() {
             <MapPin size={16} /> {result.location.full_name}
           </div>
 
-        <button onClick={handleSave}>
-  Save (Coming Soon)
-</button>
+          {user && (
+            <button onClick={handleSave} disabled={saving || saved}>
+              {saved ? <CheckCircle /> : <Save />}
+              {saved ? 'Saved' : saving ? 'Saving...' : 'Save'}
+            </button>
+          )}
 
           <div style={{
             display: 'grid',
