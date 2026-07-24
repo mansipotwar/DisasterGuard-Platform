@@ -121,5 +121,7 @@ This project is licensed under the MIT License.
 
 **Mansi Potwar**
 
-- GitHub: https://github.com/mansipotwar
-- LinkedIn: https://www.linkedin.com/in/YOUR-LINKEDIN
+- 🐙 GitHub: https://github.com/mansipotwar
+- 💼 LinkedIn: https://www.linkedin.com/in/mansi-potwar/
+- 📺 YouTube: https://www.youtube.com/@mansiova
+- ✉️ Email: maanasiexai9@example.com
