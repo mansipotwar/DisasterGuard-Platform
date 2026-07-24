@@ -306,7 +306,7 @@ export default function News() {
       setError(null);
 
       const requests = DISASTERS.map((type) =>
-        fetch(`http://localhost:5000/news/latest?disaster=${type}&limit=2`)
+        fetch(`https://disasterguard-backend-jtg7.onrender.com/news/latest?disaster=${type}&limit=2`)
           .then((res) => {
             if (!res.ok) throw new Error(`Failed ${type}`);
             return res.json();

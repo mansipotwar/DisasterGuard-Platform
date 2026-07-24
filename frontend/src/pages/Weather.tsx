@@ -20,7 +20,7 @@ interface WeatherData {
 }
 
 // ── Backend config ──────────────────────────────────────────────────────────
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "https://disasterguard-backend-jtg7.onrender.com";
 
 function mapBackendToUI(data: any, locationName: string): WeatherData {
   const temp = Math.round(data.temperature);

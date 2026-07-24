@@ -58,7 +58,7 @@ export default function Route({ dark = false }: RouteProps) {
 
       if (!src || !dst) { setError('Invalid location'); setLoading(false); return; }
 
-      const res  = await fetch('http://127.0.0.1:5000/route/calculate', {
+      const res  = await fetch('https://disasterguard-backend-jtg7.onrender.com/route/calculate', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ source_lat: src.lat, source_lon: src.lon, dest_lat: dst.lat, dest_lon: dst.lon }),
